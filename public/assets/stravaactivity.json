@@ -1,0 +1,1567 @@
+{
+    "id": 1158498290,
+    "resource_state": 3,
+    "external_id": "garmin_push_1946516338",
+    "upload_id": 1263799352,
+    "athlete": {
+        "id": 194278,
+        "resource_state": 1
+    },
+    "name": "Wolwespruit",
+    "distance": 15397.8,
+    "moving_time": 4936,
+    "elapsed_time": 5169,
+    "total_elevation_gain": 375,
+    "type": "Ride",
+    "start_date": "2017-08-29T15:20:12Z",
+    "start_date_local": "2017-08-29T17:20:12Z",
+    "timezone": "(GMT+02:00) Africa/Johannesburg",
+    "utc_offset": 7200,
+    "start_latlng": [
+        -25.81,
+        28.26
+    ],
+    "end_latlng": [
+        -25.81,
+        28.26
+    ],
+    "location_city": null,
+    "location_state": null,
+    "location_country": "South Africa",
+    "start_latitude": -25.81,
+    "start_longitude": 28.26,
+    "achievement_count": 11,
+    "kudos_count": 46,
+    "comment_count": 2,
+    "athlete_count": 2,
+    "photo_count": 0,
+    "map": {
+        "id": "a1158498290",
+        "polyline": "vvo|CmcokD?DAA@@BITA`@MBIA?h@EN?\\FX@v@GRBFPBJYfBo@lAKZAZF`@?REnAB\\ITYDELC\\EJKDM?CEAu@MOI@MJKX?PEVONQ@{@CQHm@`@i@LIACI@QBIRUAQUc@ODG\\Sh@KPYBAI?IXkAIIOHi@DEFa@l@Id@EBKK[GG?SFIACQX]HOAQMq@OSk@?OLBTNb@MTQGOAAXORISQUi@Lw@KKGEGM[QOOECQGOWOWDEJQC]Fo@[{@E[]o@Sw@?k@DmE_Ba@Sa@_AGEOSs@s@GCcAy@]KOQWOOW_@YMAe@Lc@@G?EK\\[VQt@OHEb@a@b@Wz@w@`Aa@VC^MTc@TWLUHa@LMTBf@Tx@E\\DHL?NCLBLCHGBY@SJIHMF[JIPOHKLAL^NHFTZp@^b@\\f@ZXXZAPCBBD@LGHDh@LDCBK?SBMPQD?h@RbAXnAr@r@J\\NNXVPb@DNILCD?f@QJK?WCGQM{@GIEAAAIGK_@GOMGMe@e@K_@AO@E~BCp@IjACfAIn@@v@EnBLl@?p@CDE@C@IEKNKACMAACASGSCMBSCJ?HF`@?LDBFA@HMJRH@BIL_@Fk@BcCIaA?ECHBn@AnAHJHVNt@XXC`@BNJ@H@FGLBTALNm@EUGEUCAG?MFO@MNOPGjASpA_@rBeAZ_@DYFw@Ci@U}@K[Ee@Ke@MkAOi@CYc@aBOy@a@gAOk@Ua@O_@KOQKQQQo@KOo@k@a@Qs@KKFOd@EBc@GMIGIUKo@gAECWFKL?HFr@LTFZCJQZAJKJIVMd@?RB@ARMNE`@KRQ?GNDLH@TRD?RENK?IMINkAd@kAd@e@Hi@NKFAJLJT^@NOLNBPBh@F^In@AhAKhA@fAKZGDE?QYMcAK_@A{@Dg@BgAJYGk@OCYTQd@Cz@GV[^ETCBCXIDG?e@VcALg@QQW?_@LSFUh@gARkALa@VcBJYASOAm@FYTc@p@WPWd@UT[Ny@j@aAt@QDWKm@][FURGPCTBPMNE@m@?GBQZmAz@WNYJsAz@WJYDi@d@{@^i@f@y@h@k@t@WRQRIRJBh@OPMTMCNWZa@^m@TkAl@c@@GAAEAIDIPINKLQ^m@BSl@KPQVWNUFWNSv@_AXKLQJYLOb@Ol@G^A^B`BZx@XVDl@DnBf@j@LrAJXHvBhApAh@XJ`@Db@JJ?@Ie@c@IO@AxAHb@FPQd@]BINkBIsAKK]I}AFKDAJp@^x@^LLDRELIBqA?k@Gc@MiAe@}BeAMMO_@?I_@g@AIHUPEb@F^NLA\\S`@}@FEXKXSLe@B[N_@BUAaAAIKMQHmA`BgAlAw@tASLy@La@@QDc@NGFQTG?GCO?_A`@{AZYNEJBDLHZHXJ\\FDNODo@E_@Vy@Ag@JFT`@BPC|@@^NVRIFc@Ac@GU@cCf@KFADNJb@H\\DJA\\Hf@DPD`@^L^RTHVKAMG]_@OASLY^QN[JWRODc@Cm@VSEK@ABDNHNNB`@BfARx@BXD\\n@DBPXTLx@n@h@Z|AF`AR^B~@?HC?CKGe@Qg@IWOa@o@]_@KWKAKQFIl@FN?LInAQNKACMGg@Mu@{@i@y@a@WIK@Cr@?PGh@@x@EV?NADEAGCEk@a@GIq@Yg@Yo@WYQEGFIn@Dl@?^HBCAKUMWWKQAIJ@^Nt@`@x@Rd@FNETMJARARDJD`Aj@|@Td@EPGd@Ej@@t@KnABRKB_@KA[@CE?SZiACQOWGmAJYD_@?u@E_@QWDIPBHFLf@Fj@D`AC|@TJFQD]AWDMj@{@R?HDDLLhAZnA\\p@HFRh@FBH?FI?OCWOo@Iy@]{@Qq@Yc@EUKOIMUKKKQq@KO{@w@WMQEWAOFOl@CDe@Ma@WOGe@}@IMCAG?UN?R@RXrAWf@GVIFOb@A^BHARMLA\\KZD?FGDMFDBA@@CJ@H^P@h@G^e@ZAB@DpAl@^TLPAZ{@Fa@Cw@KaBo@wAs@_@O[[I_@QSK[HWNCVBHDPb@HTAF`@FZNTRL`@Bt@ERDNtAr@`@FPHT@PCAHZ^d@z@^TDRQPBJTTFDTDPHTPPBBBPD^BRFNJTBRJF@LCB@CNOLiB|@iBT_@Jg@HQFLTbAl@@HJLRLx@\\f@AX@LFBLEX?\\ONGPMLIRA\\BNJJJBZCX@",
+        "resource_state": 3,
+        "summary_polyline": "vvo|CmcokDbGKwArLiIpCKsBqAbBLiBqBnBmAM?wCiB`C}Bg@eBsBwPwCqI_IeB@dMkJ~Cf@uC|CvEfD~Cw@zInDvAcAqE{D|RUG_CPxBwGA~G~@LnAKaCrHqCd@{CaFgS}ByC{CJaBkByBbKnAPvA{F~AFKxKe@oJqB~EuD@dC}J_AMae@|ZbLuKtY`H_@_A|BPz@y@EkEgCB|BlBaBPuIaFfFgCTqEsF|GgKxCjB|@aE`@pDz@wFn@`GbDgAk@wFvBlKlFhGZuEsDrDi@aEwDvES}EwCbCE}@mAfLdCnGYSyLr@~EfBeCnCjGcEqLgE_@eBmBwA|J~@Vk@nB|BpBwFw@{DoDhDzAPzBpDbAlBbEtF|AaInC|FnCs@fDpA\\"
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "flagged": false,
+    "gear_id": "b1346540",
+    "average_speed": 3.119,
+    "max_speed": 8,
+    "average_temp": 21,
+    "average_watts": 116.1,
+    "kilojoules": 573,
+    "device_watts": false,
+    "has_heartrate": true,
+    "average_heartrate": 134.3,
+    "max_heartrate": 194,
+    "elev_high": 1459.4,
+    "elev_low": 1363.4,
+    "pr_count": 4,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "workout_type": null,
+    "description": "",
+    "calories": 638.9,
+    "segment_efforts": [
+        {
+            "id": 28536469139,
+            "resource_state": 2,
+            "name": "Wolwespruit 1st singletrack to bottom",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 318,
+            "moving_time": 318,
+            "start_date": "2017-08-29T15:24:10Z",
+            "start_date_local": "2017-08-29T17:24:10Z",
+            "distance": 1508.6,
+            "start_index": 78,
+            "end_index": 250,
+            "device_watts": false,
+            "average_watts": 62.7,
+            "average_heartrate": 164.4,
+            "max_heartrate": 194,
+            "segment": {
+                "id": 9241667,
+                "resource_state": 2,
+                "name": "Wolwespruit 1st singletrack to bottom",
+                "activity_type": "Ride",
+                "distance": 1877.6,
+                "average_grade": -2.3,
+                "maximum_grade": 34.6,
+                "elevation_high": 1455.4,
+                "elevation_low": 1406.8,
+                "start_latlng": [
+                    -25.809471,
+                    28.261425
+                ],
+                "end_latlng": [
+                    -25.800324,
+                    28.26383
+                ],
+                "start_latitude": -25.809471,
+                "start_longitude": 28.261425,
+                "end_latitude": -25.800324,
+                "end_longitude": 28.26383,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 1,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 1
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 28536469178,
+            "resource_state": 2,
+            "name": "First forest tech DH ",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 128,
+            "moving_time": 128,
+            "start_date": "2017-08-29T15:27:44Z",
+            "start_date_local": "2017-08-29T17:27:44Z",
+            "distance": 620.8,
+            "start_index": 191,
+            "end_index": 262,
+            "device_watts": false,
+            "average_watts": 27.2,
+            "average_heartrate": 150.4,
+            "max_heartrate": 162,
+            "segment": {
+                "id": 15473582,
+                "resource_state": 2,
+                "name": "First forest tech DH ",
+                "activity_type": "Ride",
+                "distance": 662.1,
+                "average_grade": -5.4,
+                "maximum_grade": 1.1,
+                "elevation_high": 1408.4,
+                "elevation_low": 1372.6,
+                "start_latlng": [
+                    -25.804275,
+                    28.261128
+                ],
+                "end_latlng": [
+                    -25.799833,
+                    28.263906
+                ],
+                "start_latitude": -25.804275,
+                "start_longitude": 28.261128,
+                "end_latitude": -25.799833,
+                "end_longitude": 28.263906,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 1,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 1
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 28536469202,
+            "resource_state": 2,
+            "name": "Boomklim",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 267,
+            "moving_time": 267,
+            "start_date": "2017-08-29T15:30:18Z",
+            "start_date_local": "2017-08-29T17:30:18Z",
+            "distance": 567.1,
+            "start_index": 271,
+            "end_index": 366,
+            "device_watts": false,
+            "average_watts": 175.6,
+            "average_heartrate": 150.9,
+            "max_heartrate": 167,
+            "segment": {
+                "id": 7591459,
+                "resource_state": 2,
+                "name": "Boomklim",
+                "activity_type": "Ride",
+                "distance": 302.2,
+                "average_grade": 5.9,
+                "maximum_grade": 12.3,
+                "elevation_high": 1476.4,
+                "elevation_low": 1458.4,
+                "start_latlng": [
+                    -25.800702,
+                    28.26386
+                ],
+                "end_latlng": [
+                    -25.802991,
+                    28.263729
+                ],
+                "start_latitude": -25.800702,
+                "start_longitude": 28.26386,
+                "end_latitude": -25.802991,
+                "end_longitude": 28.263729,
+                "climb_category": 0,
+                "city": null,
+                "state": null,
+                "country": null,
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": null,
+            "achievements": [],
+            "hidden": false
+        },
+        {
+            "id": 28536469228,
+            "resource_state": 2,
+            "name": "Sprint To Top",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 81,
+            "moving_time": 81,
+            "start_date": "2017-08-29T15:33:30Z",
+            "start_date_local": "2017-08-29T17:33:30Z",
+            "distance": 148.5,
+            "start_index": 336,
+            "end_index": 367,
+            "device_watts": false,
+            "average_watts": 232.1,
+            "average_heartrate": 163.7,
+            "max_heartrate": 167,
+            "segment": {
+                "id": 11618946,
+                "resource_state": 2,
+                "name": "Sprint To Top",
+                "activity_type": "Ride",
+                "distance": 165.1,
+                "average_grade": 6.5,
+                "maximum_grade": 10.8,
+                "elevation_high": 1476.1,
+                "elevation_low": 1464.6,
+                "start_latlng": [
+                    -25.801848,
+                    28.264466
+                ],
+                "end_latlng": [
+                    -25.803082,
+                    28.263642
+                ],
+                "start_latitude": -25.801848,
+                "start_longitude": 28.264466,
+                "end_latitude": -25.803082,
+                "end_longitude": 28.263642,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 1,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 1
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 28536469304,
+            "resource_state": 2,
+            "name": "400m Pedal Mash",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 152,
+            "moving_time": 152,
+            "start_date": "2017-08-29T15:34:51Z",
+            "start_date_local": "2017-08-29T17:34:51Z",
+            "distance": 381.8,
+            "start_index": 367,
+            "end_index": 428,
+            "device_watts": false,
+            "average_watts": 81.4,
+            "average_heartrate": 145.1,
+            "max_heartrate": 164,
+            "segment": {
+                "id": 8535357,
+                "resource_state": 2,
+                "name": "400m Pedal Mash",
+                "activity_type": "Ride",
+                "distance": 362.5,
+                "average_grade": 0.3,
+                "maximum_grade": 10.5,
+                "elevation_high": 1478.7,
+                "elevation_low": 1471.4,
+                "start_latlng": [
+                    -25.803141,
+                    28.263594
+                ],
+                "end_latlng": [
+                    -25.806187,
+                    28.262844
+                ],
+                "start_latitude": -25.803141,
+                "start_longitude": 28.263594,
+                "end_latitude": -25.806187,
+                "end_longitude": 28.262844,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": null,
+            "achievements": [],
+            "hidden": false
+        },
+        {
+            "id": 28536469329,
+            "resource_state": 2,
+            "name": "Flat to seconfd Climb",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 210,
+            "moving_time": 210,
+            "start_date": "2017-08-29T15:42:38Z",
+            "start_date_local": "2017-08-29T17:42:38Z",
+            "distance": 565,
+            "start_index": 543,
+            "end_index": 616,
+            "device_watts": false,
+            "average_watts": 112.7,
+            "average_heartrate": 129.3,
+            "max_heartrate": 142,
+            "segment": {
+                "id": 12800459,
+                "resource_state": 2,
+                "name": "Flat to seconfd Climb",
+                "activity_type": "Ride",
+                "distance": 283.6,
+                "average_grade": 3,
+                "maximum_grade": 6.8,
+                "elevation_high": 1480.6,
+                "elevation_low": 1472.2,
+                "start_latlng": [
+                    -25.807587,
+                    28.264379
+                ],
+                "end_latlng": [
+                    -25.809992,
+                    28.265171
+                ],
+                "start_latitude": -25.807587,
+                "start_longitude": 28.264379,
+                "end_latitude": -25.809992,
+                "end_longitude": 28.265171,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": null,
+            "achievements": [],
+            "hidden": false
+        },
+        {
+            "id": 28536469372,
+            "resource_state": 2,
+            "name": "Wolwespruit Climb 2",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 306,
+            "moving_time": 306,
+            "start_date": "2017-08-29T15:46:20Z",
+            "start_date_local": "2017-08-29T17:46:20Z",
+            "distance": 564.7,
+            "start_index": 619,
+            "end_index": 711,
+            "device_watts": false,
+            "average_watts": 190.8,
+            "average_heartrate": 147.6,
+            "max_heartrate": 154,
+            "segment": {
+                "id": 7867049,
+                "resource_state": 2,
+                "name": "Wolwespruit Climb 2",
+                "activity_type": "Ride",
+                "distance": 564.1,
+                "average_grade": 9.6,
+                "maximum_grade": 17,
+                "elevation_high": 1534.9,
+                "elevation_low": 1480.8,
+                "start_latlng": [
+                    -25.810067,
+                    28.265379
+                ],
+                "end_latlng": [
+                    -25.807861,
+                    28.270022
+                ],
+                "start_latitude": -25.810067,
+                "start_longitude": 28.265379,
+                "end_latitude": -25.807861,
+                "end_longitude": 28.270022,
+                "climb_category": 0,
+                "city": null,
+                "state": null,
+                "country": null,
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 3,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 3
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 28536469352,
+            "resource_state": 2,
+            "name": "stinger",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 158,
+            "moving_time": 158,
+            "start_date": "2017-08-29T15:46:20Z",
+            "start_date_local": "2017-08-29T17:46:20Z",
+            "distance": 280.2,
+            "start_index": 619,
+            "end_index": 667,
+            "device_watts": false,
+            "average_watts": 195.1,
+            "average_heartrate": 146.6,
+            "max_heartrate": 154,
+            "segment": {
+                "id": 9477422,
+                "resource_state": 2,
+                "name": "stinger",
+                "activity_type": "Ride",
+                "distance": 295.3,
+                "average_grade": 8.5,
+                "maximum_grade": 14.5,
+                "elevation_high": 1506,
+                "elevation_low": 1480.9,
+                "start_latlng": [
+                    -25.810115,
+                    28.265383
+                ],
+                "end_latlng": [
+                    -25.809403,
+                    28.268116
+                ],
+                "start_latitude": -25.810115,
+                "start_longitude": 28.265383,
+                "end_latitude": -25.809403,
+                "end_longitude": 28.268116,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 3,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 3
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 28536469405,
+            "resource_state": 2,
+            "name": "Top of the World",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 269,
+            "moving_time": 171,
+            "start_date": "2017-08-29T15:54:41Z",
+            "start_date_local": "2017-08-29T17:54:41Z",
+            "distance": 628.4,
+            "start_index": 790,
+            "end_index": 866,
+            "device_watts": false,
+            "average_watts": 90.1,
+            "average_heartrate": 117.9,
+            "max_heartrate": 131,
+            "segment": {
+                "id": 12800464,
+                "resource_state": 2,
+                "name": "Top of the World",
+                "activity_type": "Ride",
+                "distance": 854.2,
+                "average_grade": -0.9,
+                "maximum_grade": 12.8,
+                "elevation_high": 1537.9,
+                "elevation_low": 1520.7,
+                "start_latlng": [
+                    -25.807774,
+                    28.269669
+                ],
+                "end_latlng": [
+                    -25.806282,
+                    28.267644
+                ],
+                "start_latitude": -25.807774,
+                "start_longitude": 28.269669,
+                "end_latitude": -25.806282,
+                "end_longitude": 28.267644,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 3,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 3
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 28536469427,
+            "resource_state": 2,
+            "name": "Finally some downhill",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 198,
+            "moving_time": 198,
+            "start_date": "2017-08-29T16:00:20Z",
+            "start_date_local": "2017-08-29T18:00:20Z",
+            "distance": 997.6,
+            "start_index": 891,
+            "end_index": 994,
+            "device_watts": false,
+            "average_watts": 40.7,
+            "average_heartrate": 114.2,
+            "max_heartrate": 123,
+            "segment": {
+                "id": 15395878,
+                "resource_state": 2,
+                "name": "Finally some downhill",
+                "activity_type": "Ride",
+                "distance": 974.4,
+                "average_grade": -6.4,
+                "maximum_grade": 30.6,
+                "elevation_high": 1539.6,
+                "elevation_low": 1475.2,
+                "start_latlng": [
+                    -25.806571,
+                    28.270279
+                ],
+                "end_latlng": [
+                    -25.800391,
+                    28.265676
+                ],
+                "start_latitude": -25.806571,
+                "start_longitude": 28.270279,
+                "end_latitude": -25.800391,
+                "end_longitude": 28.265676,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": null,
+            "achievements": [],
+            "hidden": false
+        },
+        {
+            "id": 28536469444,
+            "resource_state": 2,
+            "name": "Dash and drop",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 74,
+            "moving_time": 74,
+            "start_date": "2017-08-29T16:06:04Z",
+            "start_date_local": "2017-08-29T18:06:04Z",
+            "distance": 309.6,
+            "start_index": 1039,
+            "end_index": 1066,
+            "device_watts": false,
+            "average_watts": 135.8,
+            "average_heartrate": 133.1,
+            "max_heartrate": 140,
+            "segment": {
+                "id": 15395951,
+                "resource_state": 2,
+                "name": "Dash and drop",
+                "activity_type": "Ride",
+                "distance": 319.3,
+                "average_grade": 4.8,
+                "maximum_grade": 28.8,
+                "elevation_high": 1518.8,
+                "elevation_low": 1499.3,
+                "start_latlng": [
+                    -25.80211,
+                    28.267701
+                ],
+                "end_latlng": [
+                    -25.804886,
+                    28.267128
+                ],
+                "start_latitude": -25.80211,
+                "start_longitude": 28.267701,
+                "end_latitude": -25.804886,
+                "end_longitude": 28.267128,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": null,
+            "achievements": [],
+            "hidden": false
+        },
+        {
+            "id": 28536469471,
+            "resource_state": 2,
+            "name": "Thru the trees",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 134,
+            "moving_time": 134,
+            "start_date": "2017-08-29T16:07:46Z",
+            "start_date_local": "2017-08-29T18:07:46Z",
+            "distance": 305.5,
+            "start_index": 1072,
+            "end_index": 1114,
+            "device_watts": false,
+            "average_watts": 169.6,
+            "average_heartrate": 138.3,
+            "max_heartrate": 144,
+            "segment": {
+                "id": 12854902,
+                "resource_state": 2,
+                "name": "Thru the trees",
+                "activity_type": "Ride",
+                "distance": 143.6,
+                "average_grade": 4.1,
+                "maximum_grade": 16.5,
+                "elevation_high": 1525.5,
+                "elevation_low": 1519.1,
+                "start_latlng": [
+                    -25.806044,
+                    28.26731
+                ],
+                "end_latlng": [
+                    -25.807235,
+                    28.267017
+                ],
+                "start_latitude": -25.806044,
+                "start_longitude": 28.26731,
+                "end_latitude": -25.807235,
+                "end_longitude": 28.267017,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": null,
+            "achievements": [],
+            "hidden": false
+        },
+        {
+            "id": 28536469507,
+            "resource_state": 2,
+            "name": "Berm berm dash",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 130,
+            "moving_time": 130,
+            "start_date": "2017-08-29T16:10:41Z",
+            "start_date_local": "2017-08-29T18:10:41Z",
+            "distance": 491.9,
+            "start_index": 1125,
+            "end_index": 1186,
+            "device_watts": false,
+            "average_watts": 72.5,
+            "average_heartrate": 122.4,
+            "max_heartrate": 143,
+            "segment": {
+                "id": 15451741,
+                "resource_state": 2,
+                "name": "Berm berm dash",
+                "activity_type": "Ride",
+                "distance": 504.9,
+                "average_grade": 0,
+                "maximum_grade": 19.9,
+                "elevation_high": 1533.6,
+                "elevation_low": 1514.4,
+                "start_latlng": [
+                    -25.807481,
+                    28.267688
+                ],
+                "end_latlng": [
+                    -25.805151,
+                    28.268503
+                ],
+                "start_latitude": -25.807481,
+                "start_longitude": 28.267688,
+                "end_latitude": -25.805151,
+                "end_longitude": 28.268503,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": null,
+            "achievements": [],
+            "hidden": false
+        },
+        {
+            "id": 28536469517,
+            "resource_state": 2,
+            "name": "Last Down Switch ",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 185,
+            "moving_time": 185,
+            "start_date": "2017-08-29T16:14:25Z",
+            "start_date_local": "2017-08-29T18:14:25Z",
+            "distance": 991.6,
+            "start_index": 1222,
+            "end_index": 1318,
+            "device_watts": false,
+            "average_watts": 29.9,
+            "average_heartrate": 117.5,
+            "max_heartrate": 139,
+            "segment": {
+                "id": 15242703,
+                "resource_state": 2,
+                "name": "Last Down Switch ",
+                "activity_type": "Ride",
+                "distance": 964,
+                "average_grade": -5.4,
+                "maximum_grade": 0.6,
+                "elevation_high": 1538.1,
+                "elevation_low": 1483.7,
+                "start_latlng": [
+                    -25.806393,
+                    28.270065
+                ],
+                "end_latlng": [
+                    -25.803406,
+                    28.266511
+                ],
+                "start_latitude": -25.806393,
+                "start_longitude": 28.270065,
+                "end_latitude": -25.803406,
+                "end_longitude": 28.266511,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 2,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 2
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 28536469643,
+            "resource_state": 2,
+            "name": "S Benders",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 245,
+            "moving_time": 245,
+            "start_date": "2017-08-29T16:15:17Z",
+            "start_date_local": "2017-08-29T18:15:17Z",
+            "distance": 1107.2,
+            "start_index": 1251,
+            "end_index": 1372,
+            "device_watts": false,
+            "average_watts": 54.4,
+            "average_heartrate": 119.1,
+            "max_heartrate": 127,
+            "segment": {
+                "id": 7850036,
+                "resource_state": 2,
+                "name": "S Benders",
+                "activity_type": "Ride",
+                "distance": 1162.1,
+                "average_grade": -5.3,
+                "maximum_grade": 0,
+                "elevation_high": 1397.2,
+                "elevation_low": 1335.8,
+                "start_latlng": [
+                    -25.804137,
+                    28.268491
+                ],
+                "end_latlng": [
+                    -25.803399,
+                    28.26511
+                ],
+                "start_latitude": -25.804137,
+                "start_longitude": 28.268491,
+                "end_latitude": -25.803399,
+                "end_longitude": 28.26511,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "GP",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 2,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 2
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 28536469598,
+            "resource_state": 2,
+            "name": "After the S Benders",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 125,
+            "moving_time": 125,
+            "start_date": "2017-08-29T16:16:41Z",
+            "start_date_local": "2017-08-29T18:16:41Z",
+            "distance": 523.3,
+            "start_index": 1294,
+            "end_index": 1359,
+            "device_watts": false,
+            "average_watts": 45.3,
+            "average_heartrate": 119.2,
+            "max_heartrate": 126,
+            "segment": {
+                "id": 15396056,
+                "resource_state": 2,
+                "name": "After the S Benders",
+                "activity_type": "Ride",
+                "distance": 341.8,
+                "average_grade": -7.1,
+                "maximum_grade": 8.5,
+                "elevation_high": 1486.4,
+                "elevation_low": 1458,
+                "start_latlng": [
+                    -25.803312,
+                    28.266563
+                ],
+                "end_latlng": [
+                    -25.802238,
+                    28.265442
+                ],
+                "start_latitude": -25.803312,
+                "start_longitude": 28.266563,
+                "end_latitude": -25.802238,
+                "end_longitude": 28.265442,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 3,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 3
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 28536469733,
+            "resource_state": 2,
+            "name": "Wolwespruit Climb 1",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 392,
+            "moving_time": 392,
+            "start_date": "2017-08-29T16:20:47Z",
+            "start_date_local": "2017-08-29T18:20:47Z",
+            "distance": 1135.8,
+            "start_index": 1401,
+            "end_index": 1540,
+            "device_watts": false,
+            "average_watts": 197.9,
+            "average_heartrate": 149.1,
+            "max_heartrate": 158,
+            "segment": {
+                "id": 7844343,
+                "resource_state": 2,
+                "name": "Wolwespruit Climb 1",
+                "activity_type": "Ride",
+                "distance": 1169.8,
+                "average_grade": 5.2,
+                "maximum_grade": 17.6,
+                "elevation_high": 1525.9,
+                "elevation_low": 1462.8,
+                "start_latlng": [
+                    -25.805488,
+                    28.264369
+                ],
+                "end_latlng": [
+                    -25.807275,
+                    28.267047
+                ],
+                "start_latitude": -25.805488,
+                "start_longitude": 28.264369,
+                "end_latitude": -25.807275,
+                "end_longitude": 28.267047,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "GP",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 1,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 1
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 28536469712,
+            "resource_state": 2,
+            "name": "Thru the trees",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 49,
+            "moving_time": 49,
+            "start_date": "2017-08-29T16:26:27Z",
+            "start_date_local": "2017-08-29T18:26:27Z",
+            "distance": 140,
+            "start_index": 1524,
+            "end_index": 1539,
+            "device_watts": false,
+            "average_watts": 189.9,
+            "average_heartrate": 150.2,
+            "max_heartrate": 152,
+            "segment": {
+                "id": 12854902,
+                "resource_state": 2,
+                "name": "Thru the trees",
+                "activity_type": "Ride",
+                "distance": 143.6,
+                "average_grade": 4.1,
+                "maximum_grade": 16.5,
+                "elevation_high": 1525.5,
+                "elevation_low": 1519.1,
+                "start_latlng": [
+                    -25.806044,
+                    28.26731
+                ],
+                "end_latlng": [
+                    -25.807235,
+                    28.267017
+                ],
+                "start_latitude": -25.806044,
+                "start_longitude": 28.26731,
+                "end_latitude": -25.807235,
+                "end_longitude": 28.267017,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": 3,
+            "achievements": [
+                {
+                    "type_id": 3,
+                    "type": "pr",
+                    "rank": 3
+                }
+            ],
+            "hidden": false
+        },
+        {
+            "id": 28536469777,
+            "resource_state": 2,
+            "name": "Thru the trees",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 49,
+            "moving_time": 49,
+            "start_date": "2017-08-29T16:40:29Z",
+            "start_date_local": "2017-08-29T18:40:29Z",
+            "distance": 130.3,
+            "start_index": 1848,
+            "end_index": 1868,
+            "device_watts": false,
+            "average_watts": 127.7,
+            "average_heartrate": 121.2,
+            "max_heartrate": 131,
+            "segment": {
+                "id": 12854902,
+                "resource_state": 2,
+                "name": "Thru the trees",
+                "activity_type": "Ride",
+                "distance": 143.6,
+                "average_grade": 4.1,
+                "maximum_grade": 16.5,
+                "elevation_high": 1525.5,
+                "elevation_low": 1519.1,
+                "start_latlng": [
+                    -25.806044,
+                    28.26731
+                ],
+                "end_latlng": [
+                    -25.807235,
+                    28.267017
+                ],
+                "start_latitude": -25.806044,
+                "start_longitude": 28.26731,
+                "end_latitude": -25.807235,
+                "end_longitude": 28.267017,
+                "climb_category": 0,
+                "city": "Pretoria",
+                "state": "Gauteng",
+                "country": "South Africa",
+                "private": false,
+                "hazardous": false,
+                "starred": false
+            },
+            "kom_rank": null,
+            "pr_rank": null,
+            "achievements": [],
+            "hidden": false
+        }
+    ],
+    "splits_metric": [
+        {
+            "distance": 1001.2,
+            "elapsed_time": 335,
+            "elevation_difference": 10.6,
+            "moving_time": 239,
+            "split": 1,
+            "average_heartrate": 135.52100840336135,
+            "average_speed": 4.19,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1000.6,
+            "elapsed_time": 221,
+            "elevation_difference": -39.8,
+            "moving_time": 221,
+            "split": 2,
+            "average_heartrate": 165.64253393665157,
+            "average_speed": 4.53,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1000.5,
+            "elapsed_time": 420,
+            "elevation_difference": 18.2,
+            "moving_time": 420,
+            "split": 3,
+            "average_heartrate": 149.0404761904762,
+            "average_speed": 2.38,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1001.1,
+            "elapsed_time": 386,
+            "elevation_difference": 3.8,
+            "moving_time": 386,
+            "split": 4,
+            "average_heartrate": 137.47075208913648,
+            "average_speed": 2.59,
+            "pace_zone": 0
+        },
+        {
+            "distance": 999.7,
+            "elapsed_time": 461,
+            "elevation_difference": 57.4,
+            "moving_time": 461,
+            "split": 5,
+            "average_heartrate": 139.53362255965294,
+            "average_speed": 2.17,
+            "pace_zone": 0
+        },
+        {
+            "distance": 998.5,
+            "elapsed_time": 412,
+            "elevation_difference": 7.4,
+            "moving_time": 314,
+            "split": 6,
+            "average_heartrate": 126.77707006369427,
+            "average_speed": 3.18,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1002.4,
+            "elapsed_time": 243,
+            "elevation_difference": -19,
+            "moving_time": 243,
+            "split": 7,
+            "average_heartrate": 121.30041152263375,
+            "average_speed": 4.13,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1001.6,
+            "elapsed_time": 289,
+            "elevation_difference": -10,
+            "moving_time": 289,
+            "split": 8,
+            "average_heartrate": 126.37024221453287,
+            "average_speed": 3.47,
+            "pace_zone": 0
+        },
+        {
+            "distance": 998.7,
+            "elapsed_time": 348,
+            "elevation_difference": 20.4,
+            "moving_time": 348,
+            "split": 9,
+            "average_heartrate": 135.09253731343284,
+            "average_speed": 2.87,
+            "pace_zone": 0
+        },
+        {
+            "distance": 996.9,
+            "elapsed_time": 224,
+            "elevation_difference": -24,
+            "moving_time": 224,
+            "split": 10,
+            "average_heartrate": 127.54017857142857,
+            "average_speed": 4.45,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1001.9,
+            "elapsed_time": 240,
+            "elevation_difference": -45.4,
+            "moving_time": 240,
+            "split": 11,
+            "average_heartrate": 120.20833333333333,
+            "average_speed": 4.17,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1000.2,
+            "elapsed_time": 343,
+            "elevation_difference": 54.4,
+            "moving_time": 343,
+            "split": 12,
+            "average_heartrate": 146.12827988338194,
+            "average_speed": 2.92,
+            "pace_zone": 0
+        },
+        {
+            "distance": 998.6,
+            "elapsed_time": 308,
+            "elevation_difference": 4.6,
+            "moving_time": 308,
+            "split": 13,
+            "average_heartrate": 137.17532467532467,
+            "average_speed": 3.24,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1002.7,
+            "elapsed_time": 428,
+            "elevation_difference": 15.6,
+            "moving_time": 428,
+            "split": 14,
+            "average_heartrate": 129.8133971291866,
+            "average_speed": 2.34,
+            "pace_zone": 0
+        },
+        {
+            "distance": 996.5,
+            "elapsed_time": 358,
+            "elevation_difference": -45.6,
+            "moving_time": 343,
+            "split": 15,
+            "average_heartrate": 118.003125,
+            "average_speed": 2.91,
+            "pace_zone": 0
+        },
+        {
+            "distance": 396.7,
+            "elapsed_time": 153,
+            "elevation_difference": -9.4,
+            "moving_time": 129,
+            "split": 16,
+            "average_heartrate": 113.73387096774194,
+            "average_speed": 3.08,
+            "pace_zone": 0
+        }
+    ],
+    "splits_standard": [
+        {
+            "distance": 1625.3,
+            "elapsed_time": 480,
+            "elevation_difference": -3.6,
+            "moving_time": 384,
+            "split": 1,
+            "average_heartrate": 149.10704960835508,
+            "average_speed": 4.23,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1594.1,
+            "elapsed_time": 571,
+            "elevation_difference": -11.4,
+            "moving_time": 571,
+            "split": 2,
+            "average_heartrate": 148.47619047619048,
+            "average_speed": 2.79,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1609,
+            "elapsed_time": 683,
+            "elevation_difference": 49.4,
+            "moving_time": 683,
+            "split": 3,
+            "average_heartrate": 137.32575757575756,
+            "average_speed": 2.36,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1610.9,
+            "elapsed_time": 624,
+            "elevation_difference": 24.8,
+            "moving_time": 526,
+            "split": 4,
+            "average_heartrate": 129.70722433460077,
+            "average_speed": 3.06,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1610.3,
+            "elapsed_time": 417,
+            "elevation_difference": -33.6,
+            "moving_time": 417,
+            "split": 5,
+            "average_heartrate": 124.36450839328538,
+            "average_speed": 3.86,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1628.5,
+            "elapsed_time": 506,
+            "elevation_difference": 23,
+            "moving_time": 506,
+            "split": 6,
+            "average_heartrate": 133.86612576064908,
+            "average_speed": 3.22,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1588.6,
+            "elapsed_time": 385,
+            "elevation_difference": -57,
+            "moving_time": 385,
+            "split": 7,
+            "average_heartrate": 122.35844155844156,
+            "average_speed": 4.13,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1609.8,
+            "elapsed_time": 537,
+            "elevation_difference": 56.4,
+            "moving_time": 537,
+            "split": 8,
+            "average_heartrate": 144.93109869646182,
+            "average_speed": 3,
+            "pace_zone": 0
+        },
+        {
+            "distance": 1610.5,
+            "elapsed_time": 614,
+            "elevation_difference": -3.6,
+            "moving_time": 614,
+            "split": 9,
+            "average_heartrate": 125.87842465753425,
+            "average_speed": 2.62,
+            "pace_zone": 0
+        },
+        {
+            "distance": 910.8,
+            "elapsed_time": 352,
+            "elevation_difference": -45.2,
+            "moving_time": 313,
+            "split": 10,
+            "average_heartrate": 116.89508196721312,
+            "average_speed": 2.91,
+            "pace_zone": 0
+        }
+    ],
+    "laps": [
+        {
+            "id": 3586754595,
+            "resource_state": 2,
+            "name": "Lap 1",
+            "activity": {
+                "id": 1158498290,
+                "resource_state": 1
+            },
+            "athlete": {
+                "id": 194278,
+                "resource_state": 1
+            },
+            "elapsed_time": 5171,
+            "moving_time": 5171,
+            "start_date": "2017-08-29T15:20:12Z",
+            "start_date_local": "2017-08-29T17:20:12Z",
+            "distance": 15429.2,
+            "start_index": 0,
+            "end_index": 2000,
+            "total_elevation_gain": 375,
+            "average_speed": 2.98,
+            "max_speed": 8,
+            "device_watts": false,
+            "average_watts": 116.1,
+            "average_heartrate": 134.3,
+            "max_heartrate": 194,
+            "lap_index": 1,
+            "split": 1
+        }
+    ],
+    "gear": {
+        "id": "b1346540",
+        "primary": true,
+        "name": "Specialized Epic 29",
+        "resource_state": 2,
+        "distance": 22961097
+    },
+    "partner_brand_tag": null,
+    "photos": {
+        "primary": null,
+        "count": 0
+    },
+    "highlighted_kudosers": [
+        {
+            "destination_url": "strava://athletes/204656",
+            "display_name": "Christie E.",
+            "avatar_url": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/204656/5417529/1/medium.jpg",
+            "show_name": true
+        },
+        {
+            "destination_url": "strava://athletes/12649496",
+            "display_name": "Anzel D.",
+            "avatar_url": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/12649496/3756010/33/medium.jpg",
+            "show_name": true
+        },
+        {
+            "destination_url": "strava://athletes/1429149",
+            "display_name": "Hugo G.",
+            "avatar_url": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/1429149/2432657/3/medium.jpg",
+            "show_name": true
+        }
+    ],
+    "device_name": "Garmin Edge 810",
+    "embed_token": "0d359e9efd8e3601310b0e0dc6ed857fd0b829dc",
+    "segment_leaderboard_opt_out": false
+}

@@ -1,0 +1,54 @@
+<% include ./partials/header %>
+
+
+<div class = "ui main text container segment">
+
+    <!--<h3>PEMBI BIKE PARK CHALLENGE</h3>-->
+        
+    <div class = "thumbnail" style="text-align:center">
+    
+        <h2>Authorize Pembi Bike Park Challenge to connect to Strava</h2>
+        <br><br>
+        <div>
+            <br>
+            <input type="image" id="image" type="image" src="/assets/btn_strava_connectwith_orange.png"><br>
+            <input type="button" id = "button1" name="button1" class="btn btn-warning" value="Authorize" style = "background-color: #fc4co2"/>
+            <input type="button" id = "button2" name="button2" class="btn btn-default" value="Cancel"/>
+            <hr>
+            <p>Pembi Bike Park Challenge will be able to:</p>
+            <p> - Access your profile and activity data</p>
+            <br>
+            <p>You can revoke access to any application at any time from the Applications tab of your Athlete profile.</p>
+            <br>
+            <p>By authorizing an application you are still under</p>
+            <p><a href = "https://www.strava.com/terms">Strava's Terms of Service</a></p>
+            <br>
+                <img src = "/assets/api_logo_pwrdBy_strava_horiz_light.png" style= "width: 175px">
+        </div>
+    </div>
+</div>
+
+
+<!--Button onclick-->
+    <script>
+    
+    // $(document).ready(function(){
+    //     console.log( "document loaded!" );
+
+    // OnClick -> forward to Strava Auth URL
+        $( "#image" ).click(function() {
+            alert("Connect Strava Button Clicked");
+            console.log("line after button clicked");
+            // res.redirect("/stravaauth");
+        });
+        
+    //     $( "#button1" ).click(function() {
+    //         alert("Blue Button Clicked");
+    //         res.redirect("about");
+    //     });
+    // });
+
+    </script>
+
+
+<% include ./partials/footer %>

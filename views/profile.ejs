@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+<!--forms needs 2 inputs -> username and password -->
+
+    <div class = "ui main text container segment">
+        <div class = "row">
+            <h1 style = "text-align: center">Profile</h1>
+            <div style = "width: 30%; margin: 25px auto;">
+
+                    <div class = "form-group">
+					<p>
+						<strong>id</strong> : <%= user.id %><br>
+						<strong>first name</strong> : <%= user.first_name %><br>
+						<strong>last name</strong> : <%= user.last_name %><br>
+						<strong>email</strong> : <%= user.email %><br>
+						<strong>password</strong> : <%= user.password %>
+					</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+<% include ./partials/footer %>

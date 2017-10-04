@@ -1,0 +1,104 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+
+      <!-- Feautured Bike Parks Section -->
+      <h3><strong>Featured Bike Parks</strong></h3>
+
+         
+      <!-- Grid display same as YelpCamp Campgrounds Page-->
+      <div class = "row text-center" style = "display: flex; flex-wrap: wrap;">
+        <div class = "col-md-4 col-sm-6">
+            <div class = "thumbnail">
+                <img src = "https://www.imba.com/sites/default/files/WinterPark_828_rgb.jpg" style = "height: 225px">
+                <div class = "caption">
+                  <h4>Modderfontein</h4>
+                </div>
+            </div>
+        </div>
+                <div class = "col-md-4 col-sm-6">
+            <div class = "thumbnail">
+                <img src = "http://www.ride.co.za/wp-content/uploads/2015/05/thaba1.jpg" style = "height: 225px">
+                <div class = "caption">
+                  <h4>Thaba Trails</h4>
+                </div>
+            </div>
+        </div>
+                <div class = "col-md-4 col-sm-6">
+            <div class = "thumbnail">
+                <img src = "http://www.avianto.co.za/wp-content/uploads/2017/01/EV_20130824_00165_1.jpg" style = "height: 225px">
+                <div class = "caption">
+                  <h4>Avianto Trails</h4>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- End of grid display-->
+      
+
+        <h3><strong>List of Bike Parks</strong></h3>
+
+        <div id="toolbar">
+            <input type="button" id = "button1" name="button1" class="btn btn-success" value="Get More Info"/>
+            <input type="button" id = "button2" name="button2" class="btn btn-success" value="Log a Visit"/>
+            <input type="button" id = "button3" name="button3" class="btn btn-success" value="Missing a Park?"/>
+        </div>
+ 
+ 
+        <table id = "table1" class = "table table-bordered table-hover display compact">
+            <thead class="thead-inverse">
+            <tr>
+              <th>#</th>
+              <th>Park Name</th>
+              <th>Location</th>
+              <th>Blank on Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+              
+                <!--Build table content by iterating received object rows-->
+                <% rows.forEach(function(row){ %>
+                <tr>
+                    <td id ="parkid"><%= row.id %></td>
+                    <td id = "parkname"><%= row.name %></td>
+                    <td id = "parklocation"><%= row.location %></td>
+                      <td></td>
+                </tr>    
+                <% }) %>
+
+          </tbody>
+        </table>
+</div> 
+
+<!--Button TEST onclick-->
+    <script>
+    // OnClick change the rows colours to show selection
+        $("tbody tr").click(function () {
+            if ( $(this).hasClass('selected') ) {
+                $(this).removeClass('selected');
+            } else {
+                $('.selected').removeClass('selected');
+                $(this).addClass("selected");
+            }
+        });
+
+        // OnClick button needs to grab data from selected row
+        $( "#button1" ).click(function() {
+        res.redirect("showOnePark.ejs");
+
+        });
+        
+        // Button to log a visit - posts selected row to mysql
+        $( "#button2" ).click(function() {
+            var value = $("#table1 tr.selected td:first").html(); //first TD element in the TR
+            alert(value);
+            $.post("/visitForm", {value: value});
+        });
+
+        // Initialising DataTables
+        $(document).ready(function() {
+          $('#table1').DataTable();
+        } );    
+      </script>
+  
+<% include ./partials/footer %>

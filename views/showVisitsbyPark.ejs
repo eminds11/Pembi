@@ -1,0 +1,35 @@
+<% include partials/header %>
+
+     <div class="container">
+        <h3>Visits to Bike Park</h3>
+ 
+        <div id="toolbar">
+
+        </div>
+        <h4>Park Name: <%= rows[0].name %></h4>
+        <h4>Total Visits : <%= rows.length %></h4>
+ 
+        <table id = "table1" class = "table table-bordered table-hover">
+            <thead class="table thead-inverse">
+            <tr>
+              <th>Park</th>
+              <th>User</th>
+              <th>Date Visited</th>
+            </tr>
+          </thead>
+          <tbody>
+              
+                <!--Build table content by iterating received object rows-->
+                <% rows.forEach(function(row){ %>
+                <tr>
+                    <td id ="parkid"><%= row.park %></td>
+                    <td id = "parkname"><%= row.first_name %> <%= row.last_name %></td>
+                    <td id = "parklocation"><%= row.date.toDateString() %></td>
+                </tr>    
+                <% }) %>
+
+          </tbody>
+        </table>
+    </div>
+    
+<% include ./partials/footer %>

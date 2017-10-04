@@ -1,0 +1,43 @@
+<% include partials/header %>
+
+     <div class="container">
+        <h3><strong>Leaderboard : Bike Park Challenge</strong></h3>
+ 
+        <div id="toolbar">
+
+        </div>
+        <h4>Total Bike Park Visits : <%= rows.length %></h4>
+        <%= rows[0] %>
+ 
+        <table id = "table1" class = "table table-bordered table-hover display compact">
+            <thead class="thead-inverse">
+            <tr>
+              <th>Most Visits</th>
+              <th>Athlete</th>
+              <th>Date Visited</th>
+            </tr>
+          </thead>
+          <tbody>
+              
+                <!--Build table content by iterating received object rows-->
+                <% rows.forEach(function(row){ %>
+                <tr>
+                    <td><%= row.park %></td>
+                    <td><%= row.user %> </td>
+                    <td><%= row.date %></td>
+                </tr>
+                <% }) %>
+
+          </tbody>
+        </table>
+    </div>
+    
+    <script>
+        // Initialising DataTables
+        $(document).ready(function() {
+          $('#table1').DataTable({
+              "order": [[ 0, "desc" ]]
+          });
+        } );    
+    </script>
+<% include ./partials/footer %>
