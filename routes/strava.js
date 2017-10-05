@@ -17,7 +17,7 @@ connection.query('USE ' + dbconfig.database);
 //==============
 
 router.get('/getstarted', function (req, res) {
-	res.render("strava/getstarted");
+	res.render("getstarted");
 });
 
 // Routes to enable user to link Pembi to Strava account
@@ -32,7 +32,7 @@ router.get('/stravalinksuccess', function (req, res) {
 	console.log(req.query);
 
 // save user's Strava ID to DB
-	res.render();
+	res.render("stravalinksuccess");
 });
 
 

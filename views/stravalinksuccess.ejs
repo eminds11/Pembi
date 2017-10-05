@@ -14,7 +14,7 @@
         
         <hr>
         <h4><strong>Your Strava Profile Information</strong></h4>
-        <img src = <%= response.profile_medium %> style="width:100px;height:100px;">
+        <img src = <%= response.athlete.profile_medium %> style="width:100px;height:100px;">
         <p>access token :  <%= response.access_token %></p>
         <p>athlete id : <%= response.athlete.id %></p>
         <p><strong><%= response.athlete.firstname %> <%= response.athlete.lastname %></strong></p>
