@@ -6,7 +6,7 @@
         <div id="toolbar">
 
         </div>
-        <h4>Total Bike Park Visits : <%= rows.length %></h4>
+        <h4>Total Bike Park Visits by Athletes : <%= rows.length %></h4>
         <%= rows[0] %>
  
         <table id = "table1" class = "table table-bordered table-hover display compact">
@@ -14,17 +14,15 @@
             <tr>
               <th>Most Visits</th>
               <th>Athlete</th>
-              <th>Date Visited</th>
             </tr>
           </thead>
-          <tbody>
-              
+
                 <!--Build table content by iterating received object rows-->
-                <% rows.forEach(function(row){ %>
+            <tbody>              
+                <% rows.forEach(function(element, count){ %>
                 <tr>
-                    <td><%= row.park %></td>
-                    <td><%= row.user %> </td>
-                    <td><%= row.date %></td>
+                    <td><%= rows[count].park %></td>
+                    <td><%= rows[count].first_name %> <%= rows[count].last_name %></td>
                 </tr>
                 <% }) %>
 

@@ -33,7 +33,7 @@
                   <li><a href = "#" style="color:red"><strong>BETA TESTING</strong></a></li>
                   <li><a href = "/about">About</a></li>
                   <li><a href = "/showParks">Bike Parks</a></li>
-                  <li><a href = "/showParks">Bike Park Challenge</a></li>
+                  <li><a href = "/bikeparkchallenge">Bike Park Challenge</a></li>
                   <!--<li><a href = "/skills">Skills Challenge</a></li>-->
                   <!--<li><a href = "/">Strava Challenges</a></li>-->
                   <li><a href = "/Q&A">Q & A</a></li>
@@ -52,6 +52,18 @@
       </div>
   </nav>
   
-  <h1><%= message %></h1>
+<div class = "container">
+    <% if(error && error.length > 0) { %>
+        <div class = "alert alert-danger" role = "alert">
+            <%= error %>    
+        </div>
+    <% } %>
+    <% if(success && success.length > 0) { %>
+        <div class = "alert alert-success" role = "alert">
+        <%= success %>    
+      </div>
+    <% } %>
+</div>
+
   
 
