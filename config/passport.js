@@ -54,7 +54,7 @@ module.exports = function(passport) {
                 if (err)
                     return done(err);
                 if (rows.length) {
-                    return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
+                    return done(null, false, req.flash('error', 'That email is already taken.'));
                 } else {
                     // if there is no user with that email
                     // create the user
@@ -71,7 +71,7 @@ module.exports = function(passport) {
                             console.log(err);
                         }
                         newUserMysql.id = rows.insertId;
-                        return done(null, newUserMysql);
+                        return done(null, newUserMysql, req.flash('success', 'Success! Welcome to the Pembi website!'));
                     });
                 }
             });
@@ -97,15 +97,15 @@ module.exports = function(passport) {
                 if (err)
                     return done(err);
                 if (!rows.length) {
-                    return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
+                    return done(null, false, req.flash('error', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
                 }
 
                 // if the user is found but the password is wrong
                 if (!bcrypt.compareSync(password, rows[0].password))
-                    return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
+                    return done(null, false, req.flash('error', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
 
                 // all is well, return successful user
-                return done(null, rows[0]);
+                return done(null, rows[0], req.flash('success', 'Logged in! Welcome back!'));
             });
         })
     );
