@@ -30,33 +30,33 @@ v4: Comments, Facebook login
 - [x]report by park visits
 - [x]add website url for each park
 - [x]upload all parks into db
-- []add login, authentication, encryption
+- [x]add login, authentication, encryption
 - []add e-mail verification, forgot password
 - []add comments capability
 - [x]change db to pembidb
 - [x]Featured bikeparks x3 on bikeparks page - step 1
 - []read featured bike parks from db marker - step 2
 - [x]add Data Tables controls
-- []add Q&A
-- []add Get Started
+- [x]add Q&A
+- [x]add Get Started
 - []Refactor login once working to ADD firstname, lastname, e-mail NO USERNAME
 - [x]add e-mail verification during register process
 - [x]add hash to password encryption
 - []refactor for routing folder
 - []add Facebook as autehtication strategy
-- []Challenge ranking
+- [x]Challenge ranking/leaderboard
 - []add side menu for ShowParks page ... How does Challenge Work, Get Started, Challenge Ranking
 - []make showOne 6/6 & add challenge ranking, total visits, most visits, etc
-- []Implement flash messages (flash-connect)
-- 
-
-- []make auth views files work
-- []create users.js routes file & make work with basics
-- []create routes/bikeparks.js
-- []auth routes files
+- [x]Implement flash messages (flash-connect)
+- [x]make auth views files work
+- [x]create users.js routes file & make work with basics
+- [x]create routes/bikeparks.js
+- [x]auth routes files
+FACEBOOK
 - []share on Facebook - I have joined the challenge
-
 STRAVA
-- []build webhook
-- 
-
+- [x]build webhook
+- [x]add auth
+- []myDashboard
+- []bike park challenge dashboard
+- []bike park dashboard
