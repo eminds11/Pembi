@@ -35,11 +35,10 @@ module.exports = function(app, passport) {
 	// show the login form
 	app.get('/login', function(req, res) {
 		// render the page and pass in any flash data if it exists
-		res.render('login.ejs', { message: req.flash('loginMessage') });
+		res.render('login.ejs');	// { message: req.flash('loginMessage') }
 	});
 
 	// process the login form
-
 	app.post('/login', passport.authenticate('local-login', {
             successRedirect : '/profile', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
@@ -76,7 +75,7 @@ module.exports = function(app, passport) {
 	// we will want this protected so you have to be logged in to visit
 	// we will use route middleware to verify this (the isLoggedIn function)
 	app.get('/profile', isLoggedIn, function(req, res) {
-		res.render('profile.ejs', {
+			res.render('profile.ejs', {
 			user : req.user // get the user out of session and pass to template
 		});
 	});
@@ -86,7 +85,7 @@ module.exports = function(app, passport) {
 	// =====================================
 	// show the forgot form
 	app.get('/forgot', function(req, res) {
-		res.render('forgot.ejs', { message : req.flash("error") });
+		res.render('forgot.ejs'); //{ message : req.flash("error") }
 	});
 	
 	// process the forgot form
@@ -172,15 +171,15 @@ module.exports = function(app, passport) {
 	// RESET PASSWORD ==============================
 	// =====================================
 	// show the reset form
-	app.get('/reset/:token', function(req, res) {
-														// before calling reset form - first check if token still valid
+	app.get('/reset/:token', function(req, res) {	
+							// before calling reset form - first check if token still valid
 
 		    var sql = "SELECT * FROM users WHERE resetPasswordToken = ?";
 		    connection.query(sql, [req.params.token], function(err, user) {		// verify if user exists
 				if (err) { res.send(err); }
 				if (!user.length) {
 					console.log("No acount for that token - does not exist.");
-					req.flash('error', 'No account with that email address exists.');
+					req.flash('error', 'Invalid reset token!');
 	        		return res.redirect('/forgot');
 	        	} else {
 
@@ -193,7 +192,7 @@ module.exports = function(app, passport) {
 	        	console.log("User Exists & token still valid. Render the RESET form.");
 				}
 				
-			res.render("reset", {user: "doc", token: req.params.token});		    	
+			res.render("reset", {user: "doc", token: req.params.token});
 		  });
 	});
 		    
@@ -213,13 +212,14 @@ module.exports = function(app, passport) {
 				if (err) { return done(err); }
 				if (!user.length) {
 					console.log("No acount for that token - does not exist");
-					req.flash('error', 'No account with that email address exists.');
+					req.flash('error', 'No acount for that token - does not exist!');
 	        		return res.redirect('/forgot');
 	        	}
 	        	console.log("User Exists : " + user[0].resetPasswordExpires);
 	        	console.log("Date now : " + Date.now());
 				if(user[0].resetPasswordExpires < Date.now()){				// verify if token still valid
 					console.log("token has expired");
+					req.flash('error', 'Reset token has expired! ');
 					return res.redirect('back');
 				} else {
 
@@ -288,7 +288,7 @@ module.exports = function(app, passport) {
 	// =====================================
 	app.get('/logout', function(req, res) {
 		req.logout();
-		req.flash("message", "Logged you out!");
+		req.flash("success", "Logged you out!");
 		res.redirect('/');
 	});
 	
@@ -301,7 +301,8 @@ function isLoggedIn(req, res, next) {
 		return next();
 
 	// if they aren't redirect them to the home page
-	res.redirect('/');
+	req.flash("error", "Please Login First!");
+	res.redirect('/login');
 	}
 
 

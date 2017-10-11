@@ -42,7 +42,7 @@ router.get('/getactivity', function (req, res) {
 
 	async.waterfall([
 		
-	// STEP 1. Get activity details from Strava API
+	// STEP 1. Get activity details from Strava API & write to JSON
 	function(done){
 		console.log("STEP 1 : GET JSON from Strava");
 		var json = req.body;
@@ -130,7 +130,7 @@ router.get('/getactivity', function (req, res) {
 	}, //end of function STEP 2
 
 
-	// STEP 3. Write parks visited to DB, redirect to myDashboard
+	// STEP 3. Write parks visited to visitslog, redirect to myDashboard
 	function(parksVisited, done){
 		console.log("STEP 3 start");
 
@@ -165,10 +165,6 @@ router.get('/getactivity', function (req, res) {
 	});
 });		// end of route
 
-
-//=========================
-// STRAVA API TESTS
-//=========================
 
 //=========================
 // API : WEBHOOKS
@@ -300,7 +296,8 @@ function isLoggedIn(req, res, next) {
 		return next();
 
 	// if they aren't redirect them to the home page
-	res.redirect('/');
+	req.flash("error", "Please Login First!");	
+	res.redirect('/login');
 	}
 
 module.exports = router;
