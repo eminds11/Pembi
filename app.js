@@ -7,7 +7,7 @@ var session 	= require('express-session');
 var	mysql   	= require('mysql');
 var cookieParser = require('cookie-parser');
 var bodyParser	= require('body-parser');
-var port    	= process.env.PORT || 8080;
+var port    	= process.env.PORT || 3000;
 var nodemailer	= require("nodemailer");
 var passport	= require('passport');
 var LocalStrategy   = require('passport-local').Strategy;
@@ -24,8 +24,8 @@ require('./config/passport')(passport); // pass passport for configuration
 
 // DATABASE CONNECTION
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'trackz',
+  host     : '127.0.0.1',
+  user     : 'root',
   password : '',
   database : 'pembidb'
 });
@@ -58,7 +58,8 @@ app.use(passport.session()); // persistent login sessions
 // define global variables
 app.use(function(req, res, next){
 	res.locals.currentUser = req.user;
-	res.locals.message = req.flash("error");
+	res.locals.error = req.flash("error");
+	res.locals.success = req.flash("success");
 	next();
 });
 
@@ -70,33 +71,10 @@ app.use(function(req, res, next){
 require('./routes/users.js')(app, passport); // load our routes and pass in our app and fully configured passport
 app.use(require('./routes/strava.js'));
 app.use(require('./routes/auth.js'));
+app.use(require('./routes/bikeparks.js'));
+app.use(require('./routes/leaderboards.js'));
 
-
-// SET DEFAULT ROUTE (LANDING PAGE)
-app.get('/', function (req, res) {
-	console.log("req.user : " + req.user);
-	res.render("index", { currentUser: req.user });
-});
-
-app.get('/about', function (req, res) {
-	let username;
-	if(req.user) {
-		username = req.user; 
-	} else {
-		username = "";
-	}
-	req.flash('info', 'Flash message!!')
-	res.render("about", { currentUser: username });
-});
-
-app.get('/skills', function (req, res) {
-	res.render("skills");
-});
-
-
-app.get('/Q&A', function (req, res) {
-	res.render("Q&A");
-});
+// MOVE TO BIKEPARKS.JS
 
 // Show all bike parks in table
 app.get('/showParks', function (req, res) {
@@ -168,7 +146,7 @@ app.get('/showOnePark/:id', function (req, res) {
 });
 
 // SHOW USER VISITS BY ID
-app.get('/showVisitsbyUser/:id', function (req, res) {
+app.get('/showVisitsbyUser/:id', isLoggedIn, function (req, res) {
 
 	var userid = req.params.id;
     var sql = "SELECT visitslog.user, visitslog.date, parks.name, users.first_name, users.last_name FROM visitslog LEFT JOIN parks ON visitslog.park=parks.id LEFT JOIN users ON visitslog.user=users.id WHERE user = ?";
@@ -213,41 +191,6 @@ app.get('/showVisitsbyPark/:id', function (req, res) {
 	});
 });
 
-app.get('/leaderboard', function (req, res) {
-
-// var sql = "SELECT visitslog.park, visitslog.date, users.first_name, users.last_name, parks.name FROM visitslog LEFT JOIN users ON visitslog.user=users.id LEFT JOIN parks ON visitslog.park=parks.id";
-
-// most visits by bikepark
-// var sql = "SELECT park, COUNT(user) AS user FROM visitslog GROUP BY park ORDER BY user";
-
-
-// most visits by user
-	var sql = "SELECT user, COUNT(park) AS park FROM visitslog GROUP BY user ORDER BY park";
-	connection.query(sql, function(err, rows) {
-  		if (!err){
-  			var response = [];
-			if (rows.length != 0) {
-				response.push({'result' : 'success', 'data' : rows });
-				console.log(rows[3].user);
-
-				// rowjson.forEach(function(item, count){
-				// 	console.log(count + " : " + rows[count].user);
-				// 	var name = "piet";
-				// 	response.push({'result' : 'success', 'data' : rows, "rows[count].user": name });
-					
-					
-				// // });
-				// console.log(response[5]);
-				// res.render("leaderboard", { rows: response }); //1st rows is the variable being passed to ejs, second rows is the array in this file
-			} else {
-				response.push({'result' : 'error', 'msg' : 'No Results Found'});
-			}
-  		} else {
-		    res.status(400).send(err);
-	  	}
-	});		//end of connection.query
-	
-});		// end of app.get
 
 //=============
 //COMMENT ROUTES WILL GO HERE
@@ -262,15 +205,25 @@ function isLoggedIn(req, res, next) {
 		return next();
 	} else {
 		// if they aren't redirect them to the home page
-		req.flash("info", "Please Login First!");
-		res.redirect("/");
+		req.flash("error", "Please Login First!");
+		res.redirect("/login");
 		}
 	}
 
 
 // ===========
 // CREATE SERVER
+// Cloud 9 io
+// app.listen(process.env.PORT, process.env.IP, function(){
+// 	console.log("Pembi Server has started!"); 
+//   });
 
-app.listen(process.env.PORT, process.env.IP, function(){
-  console.log("Pembi Server has started!"); 
-});
+// // localhost:3000
+// app.listen(3000, function () {
+// 	console.log('Example app listening on port 3000!')
+//   })
+
+
+app.listen(3000, function () {
+	console.log('Example app listening on port 3000!')
+  })
