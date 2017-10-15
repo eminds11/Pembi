@@ -172,10 +172,10 @@ module.exports = function(app, passport) {
 	// =====================================
 	// show the reset form
 	app.get('/reset/:token', function(req, res) {	
-							// before calling reset form - first check if token still valid
+	// before calling reset form - first check if token still valid
 
 		    var sql = "SELECT * FROM users WHERE resetPasswordToken = ?";
-		    connection.query(sql, [req.params.token], function(err, user) {		// verify if user exists
+		    connection.query(sql, [req.params.token], function(err, user) {		// verify if token exists
 				if (err) { res.send(err); }
 				if (!user.length) {
 					console.log("No acount for that token - does not exist.");
@@ -207,24 +207,29 @@ module.exports = function(app, passport) {
 	// AGAIN ... search for token, check if time still valid, see if time now is > time from token expire, then return user info
 	    function(done) {
 
+		// verify if user exists
 		    var sql = "SELECT * FROM users WHERE resetPasswordToken = ?";
-		    connection.query(sql, [req.params.token], function(err, user) {		// verify if user exists
-				if (err) { return done(err); }
-				if (!user.length) {
-					console.log("No acount for that token - does not exist");
-					req.flash('error', 'No acount for that token - does not exist!');
-	        		return res.redirect('/forgot');
-	        	}
-	        	console.log("User Exists : " + user[0].resetPasswordExpires);
-	        	console.log("Date now : " + Date.now());
-				if(user[0].resetPasswordExpires < Date.now()){				// verify if token still valid
-					console.log("token has expired");
-					req.flash('error', 'Reset token has expired! ');
-					return res.redirect('back');
-				} else {
+		    connection.query(sql, [req.params.token], function(err, user) {
+			if (err) { return done(err); }
+		
+			if (!user.length) {
+				console.log("No acount for that token - does not exist");
+				req.flash('error', 'Invalid reset token!');
+        		return res.redirect('/forgot');
+	        }
+	        	
+		// verify if token still valid
+        	console.log("User Exists : " + user[0].resetPasswordExpires);
+        	console.log("Date now : " + Date.now());
+			if(user[0].resetPasswordExpires < Date.now()){
+				console.log("token has expired");
+				req.flash('error', 'Token has expired.');
+				return res.redirect('back');
+			}
 
-// TBD - confirm both passwords are the same
-	
+		// confirm both passwords are the same
+			if (req.body.password === req.body.confirm) {
+				
 			// Write new password to DB
 				console.log("token still valid for : "+ user[0].email);
 
@@ -238,7 +243,6 @@ module.exports = function(app, passport) {
 	                    console.log(err);
 	                }
 					// need to login user with newpw
-					console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 					var User = user[0];
 					console.log(User.email + " : newpassword : " + req.body.password);
 					
@@ -246,7 +250,11 @@ module.exports = function(app, passport) {
 	            	done(err, User);
 	        		});				
 			    }); // end of save
-				}
+			    
+			} else {
+				req.flash("error", "Passwords do not match!");
+				return res.redirect("back");
+			}
 	      });
 	    },
 
@@ -277,7 +285,8 @@ module.exports = function(app, passport) {
 	    } // end of send mail function
 	    
 	  ], function(err) {
-	    if(err){console.log(err)} else{ res.redirect('/'); }
+	    if(err){console.log(err)} else { res.redirect('/');
+	    }
 	  });
 	});
 

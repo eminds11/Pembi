@@ -3,34 +3,32 @@
 <div class = "container">
     <div class = "row">
         <div class = "col-md-3">
-            <h3><strong>Bike Park Dashboard</strong></h3>
+            <h3><strong>Park Dashboard</strong></h3>
+            <p><%= rows[0].id %></p>
             <div class = "list-group">
-                <li class = "list-group-item active">More Info</li>
-                <li class = "list-group-item">Log a Visit</li>
-                <li class = "list-group-item">See All Park Visits</li>
+                <a href = "#" class = "list-group-item active">More Info</a>
+                <a href = "/profile" class = "list-group-item">Challenge Stats</a>
+                <a href = "#" class = "list-group-item">See All Park Visits</a>
+                <a href = "/showSegments/1" class = "list-group-item">Challenge Strava Segments</a>
+                <a href = "#" class = "list-group-item">Total Challenge Visits</a>
+                <a href = "#" class = "list-group-item">Visits Last 7 days</a>
+                <a href = "#" class = "list-group-item">User Ranking</a>
             </div>
         </div>
-        <div class = "col-md-3">
-            <p class = "lead">.</p>
-            <div class = "list-group">
-                <li class = "list-group-item">Total Challenge Visits</li>
-                <li class = "list-group-item">Visits Last 7 days</li>
-                <li class = "list-group-item">User Ranking</li>
-            </div>
-        </div>
-        <div class = "col-md-6">
+        <div class = "col-md-9">
             <% rows.forEach(function(rows){ %>
             <div class = "thumbnail">
-                <h4><a><%= rows.name %></a></h4>
+                <h4><a><strong> <%= rows.name %> </strong></a></h4>
                 <img class = "img-responsive" src = "<%= rows.image %>">
                 <div class = "caption-full">
                     <h4 class = "pull-right">$9.00/night</h4>
                     <p><%= rows.description %></p>
                     <p><em>Website: <a href = "<%= rows.website %>"><%= rows.website %></a></em></p>
                 </div>
-        </div>
+            </div>
             <!-- DIV for the Comments section below the Campground Info -->
             <div class = "well">
+                <p style="color:red">For Beta Demo only. The button doesn't work but go ahead, click it anyway:-)</p>
                 <div class ="text-right">
                     <a class = "btn btn-success" href = "#">Add New Comment</a>
                 </div>

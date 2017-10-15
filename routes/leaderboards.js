@@ -55,7 +55,7 @@ async.waterfall([
 		});		// end of drop & create leaderboard table
 	},
 
-	// STEP 2 : Select from vistslog and insert result into lb1
+	// STEP 2 : Select from vistslog and insert result into leaderboard 1
 	function Two(abc, done){
 		console.log("STEP 2 : Convert visitslog -> leaderbooard : " + abc);
 		var sql = "SELECT user, COUNT(park) AS park FROM visitslog GROUP BY user ORDER BY park DESC";
@@ -79,15 +79,14 @@ async.waterfall([
 		})	// end of query
 	},	// end of function
 
-	// join lb1 with users table
+	// join leaderboard 1 with users table
 	function Three(rows, done) {
 		console.log("STEP 3 : Join tables for final query");
-		var sql = "SELECT leaderboard1.park, users.first_name, users.last_name FROM leaderboard1 LEFT JOIN users ON leaderboard1.park=users.id";
+		var sql = "SELECT leaderboard1.park, users.first_name, users.last_name FROM leaderboard1 LEFT JOIN users ON leaderboard1.user=users.id";
 		connection.query(sql, function(err, rows) {
 			if(err){
 				console.log(err)
 			} else {
-				console.log(rows);
 				done(null, rows);
 			}
 		})

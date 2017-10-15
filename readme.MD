@@ -21,29 +21,25 @@ v4: Comments, Facebook login
 - [x]FIX - writes to db on select row rather than log visit button
 - [x]add navbar
 - [x]page to log visit
-- []auto-add user from login
-- []auto-add park from showAllParks button
+- [x]auto-add user from login
+- [x]auto-add park from showAllParks button
 - [x]add date to visits table
 - [x]report by user visits
 - [x]auto get names from DB rather than ID
-- []auto-add user for reports from login (session management)
+- [x]auto-add user for reports from login (session management)
 - [x]report by park visits
 - [x]add website url for each park
 - [x]upload all parks into db
 - [x]add login, authentication, encryption
-- []add e-mail verification, forgot password
-- []add comments capability
+- [x]add e-mail verification, forgot password
 - [x]change db to pembidb
 - [x]Featured bikeparks x3 on bikeparks page - step 1
-- []read featured bike parks from db marker - step 2
 - [x]add Data Tables controls
 - [x]add Q&A
 - [x]add Get Started
-- []Refactor login once working to ADD firstname, lastname, e-mail NO USERNAME
+- [x]Refactor login once working to ADD firstname, lastname, e-mail NO USERNAME
 - [x]add e-mail verification during register process
 - [x]add hash to password encryption
-- []refactor for routing folder
-- []add Facebook as autehtication strategy
 - [x]Challenge ranking/leaderboard
 - []add side menu for ShowParks page ... How does Challenge Work, Get Started, Challenge Ranking
 - []make showOne 6/6 & add challenge ranking, total visits, most visits, etc
@@ -52,11 +48,33 @@ v4: Comments, Facebook login
 - [x]create users.js routes file & make work with basics
 - [x]create routes/bikeparks.js
 - [x]auth routes files
-FACEBOOK
-- []share on Facebook - I have joined the challenge
 STRAVA
 - [x]build webhook
 - [x]add auth
-- []myDashboard
-- []bike park challenge dashboard
+- [x]myDashboard
+- [x]bike park challenge dashboard
 - []bike park dashboard
+- []clean up parks names
+- THU:
+- [x]add more segments for Modderfontein
+- [x]fix strava upload for Rob demo ... show park appear once segment found
+- []display parks strava challenge segments
+- []display grouped park visits by park
+- []fix columns under bike park leaderboard - remove id
+- [x]add new === verify password (see forgot/reset example)
+- [x]check if getactivity works without the timer???
+- []try a few more gpx uploads OR go ride your bicycle more!
+- []onclick on bikeparks page
+- []fix page names for header & to show loggedin user
+- []get digitalocean hosting working ... pembi.org - with very basic demo site
+
+
+RELEASE 2
+- []add extract unique params from visits array & insert into visitslog
+- []share on Facebook - I have joined the challenge
+- []add Facebook as autehtication strategy
+- []read featured bike parks from db marker - step 2
+- []refactor for routing folder
+- []add comments capability
+
+

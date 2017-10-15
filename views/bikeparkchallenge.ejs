@@ -1,36 +1,59 @@
-<% include ./partials/header %>
+<% include partials/header %>
 
-
-<div class = "ui main text container segment">
-    <h3>Bike Park Challenge</h3>
-    <div class = "thumbnail">
-        <div class="panel panel-default">
-            <div class="panel-heading"><strong>About the Pembi Bike Park Challenge</strong></div>
-                <div class="panel-body">
-                    <p>Welcome to the Pembi Bike Park Challenge.</p>
-                    <p>Follow the easy steps below to get yourself setup. Once the setup is complete and your Pembi Account is linked with your Strava Account, everything is automated so you can spend your time having fun at the bike parks while the Pembi Platform will take care of matching your rides logged on Strava with the bike parks and keep the leaderboard updated. Let's get going ..</p>
-                </div>
-            <div class="panel-heading"><strong>How to Enter</strong></div>
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <div>
-                            <li class="list-group-item"><strong>Step 1</strong> : Sign up and create your Pembi profile on this website -> <button type="button" class="btn btn-success"><a href="/signup">Click Here</a></button></li>
-                        </div>
-                        <div>
-                            <li class="list-group-item"><strong>Step 2</strong> : Open a Strava Account -> <a href="https://www.strava.com/register/free">Click Here</a>
-                            <em>(If you already have a Strava account, go to Step 3)</em></li>
-                        </div>
-                        <div>
-                            <li class="list-group-item"><strong>Step 3</strong> : Link your Strava account to your Pembi Profile to track your park visits automatically -> <a href="/stravaauth">Click Here</a></li>
-                        </div>
-                        <div>
-                            <li class="list-group-item"><strong>Step 4</strong> : Start Riding!</li>
-                        </div>
-                    </ul>
-                </div>
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-3">
+            <h3><strong>Challenge Dashboard</strong></h3>
+            <div class = "list-group">
+                <a href = "/bikeparkchallenge" class = "list-group-item active">Leaderboard</a>
+                <a href = "#" class = "list-group-item">Tell Me More</a>
+                <a href = "/getstarted" class = "list-group-item">Get Started</a>
+                <a href = "/showParks" class = "list-group-item">List of Bike Parks</a>
+            </div>
         </div>
-            <div class="panel-body"><a href = "/">Back to Home Page</a></div>
+        <div class = "col-md-9">
+
+                <h3><strong>Leaderboard</strong></h3>
+         
+                <div id="toolbar">
+        
+                </div>
+                <h4>Total Challenge Visits : 99</h4>
+                
+                    <table id = "table1" class = "table table-bordered table-hover display compact dt-responsive" width="100%">
+                    <col width="50">
+                    <col width="100">
+                        <thead class="thead-inverse">
+                        <tr>
+                          <th align = "right">Most Visits</th>
+                          <th align = "center">Athlete</th>
+                        </tr>
+                      </thead>
+            
+                <!--Build table content by iterating received object rows-->
+                    <tbody>              
+                        <% rows.forEach(function(element, count){ %>
+                        <tr>
+                            <td align = "center"><%= rows[count].park %></td>
+                            <td><%= rows[count].first_name %> <%= rows[count].last_name %></td>
+                        </tr>
+                        <% }) %>
+        
+                  </tbody>
+              </table>
+                    
+        </div>
     </div>
 </div>
-
+    
+    <script>
+        // Initialising DataTables
+        $(document).ready(function() {
+          $('#table1').DataTable({
+              "order": [[ 0, "desc" ]]
+          });
+        } );    
+    </script>
+    
+    
 <% include ./partials/footer %>

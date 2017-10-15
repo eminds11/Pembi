@@ -1,0 +1,34 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+
+      <!-- Feautured Bike Parks Section -->
+      <h3><strong>BIKE PARK NAME HERE</strong></h3>
+      <%= rows[0].park %>
+
+        <h3><strong>List of Strava Segments </strong></h3>
+
+        <table id = "table1" class = "table table-bordered table-hover display compact">
+            <thead class="thead-inverse">
+            <tr>
+              <th>Segment ID</th>
+              <th>Segment Name</th>
+              <th>View on Strava</th>
+            </tr>
+          </thead>
+          <tbody>
+              
+                <!--Build table content by iterating received object rows-->
+                <% rows.forEach(function(row){ %>
+                <tr>
+                    <td><%= row.segment %></td>
+                    <td><%= row.name %></td>
+                    <td><a href = "#">View on Strava</a></td>
+                </tr>    
+                <% }) %>
+
+          </tbody>
+        </table>
+</div> 
+
+<% include ./partials/footer %>

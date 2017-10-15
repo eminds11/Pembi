@@ -52,3 +52,25 @@ body {
 .glyphicon {
     font-size: 75px;
 }
+
+.list-group .active {
+   background: green !important;
+}
+
+.jumbotron {
+    background-image: url("https://i.pinimg.com/originals/ca/6d/cb/ca6dcb0450eb5485e6050d815a875bda.jpg");
+    background-color: #b6b6b6;
+    /*margin-bottom: 0;`enter code here`*/
+    height: 400px; 
+    min-height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.page {
+    position: relative;
+    display: none;
+    overflow: scroll;
+}

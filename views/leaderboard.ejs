@@ -1,34 +1,50 @@
 <% include partials/header %>
 
-     <div class="container">
-        <h3><strong>Leaderboard : Bike Park Challenge</strong></h3>
- 
-        <div id="toolbar">
-
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-3">
+            <h3><strong>Challenge Dashboard</strong></h3>
+            <div class = "list-group">
+                <a href = "/leaderboard1" class = "list-group-item active">Leaderboard</a>
+                <a href = "/Q&A" class = "list-group-item">More Info</a>
+                <a href = "/getstarted" class = "list-group-item">Get Started</a>
+                <a href = "/showParks" class = "list-group-item">List of Bike Parks</a>
+            </div>
         </div>
-        <h4>Total Bike Park Visits by Athletes : <%= rows.length %></h4>
-        <%= rows[0] %>
- 
-        <table id = "table1" class = "table table-bordered table-hover display compact">
-            <thead class="thead-inverse">
-            <tr>
-              <th>Most Visits</th>
-              <th>Athlete</th>
-            </tr>
-          </thead>
+        <div class = "col-md-9">
 
+                <h3><strong>Leaderboard</strong></h3>
+         
+                <div id="toolbar">
+        
+                </div>
+                <h4>Total Challenge Visits : 99</h4>
+                
+                    <table id = "table1" class = "table table-bordered table-hover display compact dt-responsive" width="100%">
+                    <col width="50">
+                    <col width="100">
+                        <thead class="thead-inverse">
+                        <tr>
+                          <th align = "right">Most Visits</th>
+                          <th align = "center">Athlete</th>
+                        </tr>
+                      </thead>
+            
                 <!--Build table content by iterating received object rows-->
-            <tbody>              
-                <% rows.forEach(function(element, count){ %>
-                <tr>
-                    <td><%= rows[count].park %></td>
-                    <td><%= rows[count].first_name %> <%= rows[count].last_name %></td>
-                </tr>
-                <% }) %>
-
-          </tbody>
-        </table>
+                    <tbody>              
+                        <% rows.forEach(function(element, count){ %>
+                        <tr>
+                            <td align = "center"><%= rows[count].park %></td>
+                            <td><%= rows[count].first_name %> <%= rows[count].last_name %></td>
+                        </tr>
+                        <% }) %>
+        
+                  </tbody>
+              </table>
+                    
+        </div>
     </div>
+</div>
     
     <script>
         // Initialising DataTables
@@ -38,4 +54,6 @@
           });
         } );    
     </script>
+    
+    
 <% include ./partials/footer %>

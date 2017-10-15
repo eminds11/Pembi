@@ -24,7 +24,7 @@ require('./config/passport')(passport); // pass passport for configuration
 
 // DATABASE CONNECTION
 var connection = mysql.createConnection({
-  host     : '127.0.0.1',
+  host     : 'localhost',
   user     : 'root',
   password : '',
   database : 'pembidb'
@@ -73,6 +73,15 @@ app.use(require('./routes/strava.js'));
 app.use(require('./routes/auth.js'));
 app.use(require('./routes/bikeparks.js'));
 app.use(require('./routes/leaderboards.js'));
+
+
+// TEST ROUTE
+// ----------
+app.get('/testblock', function (req, res) {
+	res.render("testblock");
+});
+
+
 
 // MOVE TO BIKEPARKS.JS
 
@@ -146,9 +155,9 @@ app.get('/showOnePark/:id', function (req, res) {
 });
 
 // SHOW USER VISITS BY ID
-app.get('/showVisitsbyUser/:id', isLoggedIn, function (req, res) {
+app.get("/showVisitsbyUser", isLoggedIn, function (req, res) {
 
-	var userid = req.params.id;
+	var userid = req.user.id;
     var sql = "SELECT visitslog.user, visitslog.date, parks.name, users.first_name, users.last_name FROM visitslog LEFT JOIN parks ON visitslog.park=parks.id LEFT JOIN users ON visitslog.user=users.id WHERE user = ?";
 
 		connection.query(sql, [userid], function(err, rows, fields) {
@@ -214,16 +223,11 @@ function isLoggedIn(req, res, next) {
 // ===========
 // CREATE SERVER
 // Cloud 9 io
-// app.listen(process.env.PORT, process.env.IP, function(){
-// 	console.log("Pembi Server has started!"); 
-//   });
+app.listen(process.env.PORT, process.env.IP, function(){
+	console.log("Pembi Server has started!"); 
+  });
 
-// // localhost:3000
+// localhost:3000
 // app.listen(3000, function () {
 // 	console.log('Example app listening on port 3000!')
 //   })
-
-
-app.listen(3000, function () {
-	console.log('Example app listening on port 3000!')
-  })

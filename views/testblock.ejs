@@ -1,0 +1,87 @@
+<!--HOW TO RENDER A NEW PAGE INSIDE A BLOCK-->
+<!-- ALL THE INFO HERE -> http://jsfiddle.net/sJ6Bj/4/-->
+
+
+<% include partials/header %>
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-3">
+            <h3><strong>My Dashboard</strong></h3>
+            <div class = "list-group">
+                <a href = "/showVisitsbyUser" class = "list-group-item active">Bike Park Visits</a>
+                <a href = "/profile" class = "list-group-item">My Profile</a>
+                <a href = "/getstarted" class = "list-group-item">Get Started</a>
+                <a href = "/forgot" class = "list-group-item">Forgot Password</a>
+                <a href = "#page1" class = "list-group-item">Page 1</a>
+                <a href = "#page2" class = "list-group-item">Page 2</a>
+            </div>
+        </div>
+        <div class = "col-md-9">
+
+            
+             <div id="pages">
+                <div id="page1" class="page">
+                    <h1>Page 1</h1>
+                    <p>This is all the lovely content on page 1.</p>
+                    <p>Let's add a bunch of stuff to make it scroll.</p>
+                    <p style="font-size: 72px">.<br/>.<br/></p>
+                    <p>This is at the bottom of the page.</p>
+                </div>
+                
+                <div id="page2" class="page">
+                    <h1>Page 2</h1>
+                    <p>This is all the lovely content on page 2.</p>
+                </div>
+            </div>
+            
+            
+            
+            <!--<h4><strong>Bike Park Visits</strong></h4>-->
+            <!--<div id="toolbar">-->
+            <!--</div>-->
+            <!--<h5>Rider Name: Tom Sawyer</h5>-->
+            <!--<h5>Total Bike Park Visits : 99</h5>-->
+            
+            <!--<table id = "table1" class = "table table-bordered table-hover display compact dt-responsive" width="100%">-->
+                    <!--<col width="100">-->
+                    <!--<col width="100">-->
+            <!--    <thead class="thead-inverse">-->
+            <!--        <tr>-->
+            <!--          <th>Bike Park</th>-->
+            <!--          <th>Date Visited</th>-->
+            <!--        </tr>-->
+            <!--    </thead>-->
+
+            <!--Build table content by iterating received object rows-->
+            <!--    <tbody>-->
+            <!--        <tr>-->
+            <!--            <td id = "parkname">row name</td>-->
+            <!--            <td id = "parkdate">row date</td>-->
+            <!--        </tr>    -->
+            <!--    </tbody>-->
+            <!--</table>-->
+                    
+        </div>
+    </div>
+</div>
+    
+    <script>
+        // Initialising DataTables
+        $(document).ready(function() {
+          $('#table1').DataTable({
+              "order": [[ 0, "desc" ]]
+          });
+        } );    
+        
+        // On menu click change page content
+        $(document).ready(function() {
+            $(".list-group-item").on("click", function(e) {
+                $(".page").fadeOut(250);
+                setTimeout(function() { $($(e.currentTarget).attr("href")).fadeIn(250); }, 250);
+            });
+        });
+
+    </script>
+    
+<% include ./partials/footer %>

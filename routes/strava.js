@@ -32,19 +32,22 @@ router.get('/stravalinksuccess', function (req, res) {
 	console.log(req.query);
 
 // save user's Strava ID to DB
+	req.flash('success', 'Strava linked successfully! Start riding!');
 	res.render("stravalinksuccess");
 });
 
 
-// Routes to getactivity once webhook triggered
-//=========================
+// Routes to getactivity once webhook triggered (NO LONGER IN USE - REPLACED WITH A FUNCTION)
+//=============================================
 router.get('/getactivity', function (req, res) {
+
+		console.log("reached getactivity");
 
 	async.waterfall([
 		
-	// STEP 1. Get activity details from Strava API & write to JSON
+	// STEP 1. Get activity file from Strava, extract details from Strava webhook & write to JSON
 	function(done){
-		console.log("STEP 1 : GET JSON from Strava");
+		console.log("STEP 1 : GET JSON from Strava file");
 		var json = req.body;
 		console.log("JSON received from Strava : " + json);
 		
@@ -52,7 +55,7 @@ router.get('/getactivity', function (req, res) {
 		var activity = req.params.id;
 		var accessToken = "2d8f781d16bb0a5196b725b98eac2b893ab3a10b";
 		var url = "https://www.strava.com/api/v3/activities/${activity}?access_token=${accessToken}";
-		request("https://www.strava.com/api/v3/activities/1158498290/?access_token=2d8f781d16bb0a5196b725b98eac2b893ab3a10b", function (err, response, body) {
+		request("https://www.strava.com/api/v3/activities/1085622970/?access_token=2d8f781d16bb0a5196b725b98eac2b893ab3a10b", function (err, response, body) {
 		  if(err){
 		    console.log('error:', err);
 		    done(err);
@@ -66,7 +69,6 @@ router.get('/getactivity', function (req, res) {
 		
 
    // STEP 2. Compare jsonsegments with parksegments
-   
 	function(activityResult, done){
 		// console.log("STEP 2 : compare segments");
 		var rows = [];
@@ -105,28 +107,6 @@ router.get('/getactivity', function (req, res) {
 			done(null, parksVisited);		// if no done() then async gets STUCK here!!!
 			}, 3000)
 		
- 		
-		// jsonSegments.forEach(function(item, done){
-	 //			var sql = "SELECT * FROM parksegments WHERE segment = ?";
-		// 		connection.query(sql, [ item ], function(err, rows) {
-		// 	  		if (err){
-		// 	  			console.log(err);
-		// 	  			done(err);
-		// 	  		} else {
-		// 				if (rows.length != 0) {
-		// 					var parkid = rows[0].park;
-		// 					parksVisited.push(parkid);
-		// 					console.log(parksVisited);
-		// 				} else {
-		// 						console.log(item + " : no match");
-		// 				}	// end of if
-		// 	  		}
-		// 		});	// end of connection.query
-		// 	});	// end of forEach
-		// 	console.log("comparison complete");
-		// 	console.log(parksVisited);
-		// done(null, parksVisited);	// end of STEP 2 - return for STEP 3 -> date, park visited
-
 	}, //end of function STEP 2
 
 
@@ -160,7 +140,8 @@ router.get('/getactivity', function (req, res) {
 			throw new Error(err);
 		} else {
 			console.log("Final result of the async chain of functions : " + result);		// result now equals 'done' as it has reached the end of async
-			res.redirect("showVisitsbyUser/" + req.user.id);
+			// res.redirect("showVisitsbyUser/" + req.user.id);
+			res.redirect("showVisitsbyUser");
 		}
 	});
 });		// end of route
@@ -170,7 +151,7 @@ router.get('/getactivity', function (req, res) {
 // API : WEBHOOKS
 //=========================
 // SIMULATE  to simulate SEND the webhook from Strava
-router.get('/webhookxxx', function (req, res) {
+router.get('/webhookTEST', function (req, res) {
 	
 	console.log("starting webhook send ...");
 	var webhookjson = {
@@ -202,42 +183,21 @@ router.get('/webhookxxx', function (req, res) {
    });		//end of request
 });
 
-	function useStravaData(data){
-		var data1 = JSON.parse(data);
-		console.log("reached function : " + data1);
-		console.log("athlete : " + data1.owner_id);
-		console.log("activity : " + data1.object_id);
-	};
 
 // function to RECEIVE the webhook from Strava
 router.post('/webhook', function (req, res) {
-	
+
 	res.sendStatus(200);	// acknowledge success back to Strava
 
+	// find Pembi user & activity details, pass on to getactivity
 	console.log("Subscribed Activity Received from Strava : ");
-	console.log(req.body);
+	console.log("user : " + req.body.owner_id);
+	console.log("activity : " + req.body.object_id);
 
-	useStravaData( { acvitiyData : req.body} );
+	getActivity1(req.body, function(req, res){
+		console.log("back after getactivity - now need to return & finish");
+	});
 
-// 	// post activity data to visitslog
-	
-// 	var date = new Date(req.body.event_time * 1000);
-// 	// var date = new Date(Date.UTC(2012, 0, 20, 21, 33, 22));
-// 	console.log(date.toUTCString());
-
-// // MAY NEED TO CALL A FUNCTION HERE - NOT A ROUTE
-// //getactivitydetails(); - run async inside that activcity detaukls not a route ... just a function
-
-//     var values = { park: "22", user: req.body.owner_id, date: req.body.event_time };
-//     console.log(values);
-//     var sql = "INSERT INTO visitslog SET ?";
-//     connection.query(sql, values, function(err, result) {
-//         	if(err){
-//         		console.log(err);
-//         	} else {
-//         		console.log("1 record inserted, ID: " + result.insertId);	
-//         	}
-// 		});
 });
 
 
@@ -283,6 +243,154 @@ router.get('/webhookTEMP', function (req, res) {
 
 	res.status(200).json({ "hub.challenge": hubchallenge });
 });
+
+
+//=========================
+// FUNCTIONS
+//=========================
+
+function getActivity1(inputFile, callback){
+	
+	async.waterfall([
+
+	// STEP 0 : Get user access token from DB
+	function Zero(done){
+	 	var sql = "SELECT * FROM users WHERE stravaid = ?";
+		connection.query(sql, [ inputFile.owner_id ], function(err, rows) {
+	  		if (err){
+	  			console.log(err);
+	  			done(err);
+	  		} else {
+				if (rows.length != 0) {
+					var stravatoken = rows[0].stravatoken;
+					var userid = rows[0].id;
+					console.log("userid : " + userid);
+					done(null, stravatoken, userid)
+				} else {
+				}	// end of if
+	  		}
+		});	// end of connection.query		
+	},
+	
+
+	// STEP 1. Get activity file from Strava, extract details from Strava webhook & write to JSON
+	function One(stravatoken, userid, done){
+		console.log("STEP 1 : GET JSON from Strava file");
+		console.log("userid : " + userid);
+
+		// build the url query
+		var request_params = {
+		  "access_token": stravatoken
+		};
+
+		var paramlist = [];
+		for (var pk in request_params) {
+			paramlist.push(pk + "=" + request_params[pk]);
+		};
+		var body_string = inputFile.object_id + "/?" + paramlist.join("&");
+		
+		var request_details = {
+		method: "GET",
+		url: "https://www.strava.com/api/v3/activities/" + body_string
+		};
+
+		var responseContent;
+		request(request_details, function(err, res, body) {
+			if(err){
+				console.log('error:', err);
+				return;
+			} else {
+				console.log(body);
+				responseContent = JSON.parse(body);		//json.parse converts from string to javascript object
+				console.log("responseContent 1 = " + responseContent);
+				done(null, responseContent, userid);
+			}
+		});
+	}, //end of function
+
+
+   //STEP 2. Compare jsonsegments with parksegments
+	function(activityResult, userid, done){
+		console.log("STEP 2 : compare segments");
+		var rows = [];
+		var jsonSegments = [];
+		var parksVisited = [];
+
+ 		for(var i = 0; i < activityResult.segment_efforts.length; i++){
+			var jsonsegment = activityResult.segment_efforts[i].segment.id;
+			var jsondate = activityResult.segment_efforts[i].start_date;
+			jsonSegments.push(jsonsegment);
+ 		}
+
+		function compare (item, counter, array){
+			// console.log(item, counter);
+		
+	 		var sql = "SELECT * FROM parksegments WHERE segment = ?";
+			connection.query(sql, [ item ], function(err, rows) {
+		  		if (err){
+		  			console.log(err);
+		  			done(err);
+		  		} else {
+					if (rows.length != 0) {
+						var parkid = rows[0].park;
+						parksVisited.push({ "park": parkid, "date": jsondate });
+						console.log(parksVisited);
+					} else {
+					}	// end of if
+		  		}
+			});	// end of connection.query
+		}
+
+		jsonSegments.forEach(compare);
+			setTimeout(function(){
+				console.log("Step 2 compare complete!");
+
+//!!!!!!!!!!!sonewhere here extract the unique elemnets from the array - in case multiple parks visited
+
+			done(null, parksVisited, userid);		// if no done() then async gets STUCK here!!!
+			}, 0000)
+
+
+
+	}, //end of function STEP 2
+
+
+	// STEP 3. Write parks visited to visitslog, redirect to myDashboard
+	function(parksVisited, userid, done){
+		console.log("STEP 3 start");
+		console.log("userid : " + userid);
+
+		if(parksVisited !=0){
+			var userVal = userid;
+		    var values = {park: parksVisited[0].park, user: userVal, date: parksVisited[0].date};
+		    var sql = "INSERT INTO visitslog SET ?";
+		    connection.query(sql, values, function(err, result) {
+		        	if(err){
+		        		console.log(err);
+		        	} else {
+		        		console.log("1 record inserted, ID: " + result.insertId);
+		        	}
+				});
+			
+		} else {
+			console.log("No segment of a bike park covered.");
+		}
+
+		done(null, "STEP 3 completed  ... visitslog updated with date, user, park : " );
+	}, // end of STEP 3
+
+
+	], function (err, result) {		// result is the final value coming from last step of async
+		if(err) {
+			throw new Error(err);
+		} else {
+			console.log("Final result of the async chain of functions : " + result);		// result now equals 'done' as it has reached the end of async
+			callback();
+		}
+	});
+	console.log("End of async");		// sits outside of async - will run immediately after async starts
+}
+
 
 
 //=========================

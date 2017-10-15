@@ -99,6 +99,7 @@ async.waterfall([
 			throw new Error(err);
 		} else {
 			console.log("Final result of the async chain of functions : " + result);		// result now equals 'done' as it has reached the end of async
+			req.flash('success', 'Strava linked successfully! Start riding!');
 			res.render("stravalinksuccess", { response: result });
 		}
 	});
