@@ -19,6 +19,12 @@ Strava API callback uri & url
 
 - [x]uncomment mail server
 
+- [x]upload to Github
+    git status
+    git add .
+    git commit -m "xxx?"
+    git push origin master --force
+
 SERVER COMMAND LINE:
 - []Do I need to do npm install??
 - []Do I need to redo the bit that enables port 80?
