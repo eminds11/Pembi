@@ -3,17 +3,19 @@
 <div class="ui main text container segment">
 
       <!-- Feautured Bike Parks Section -->
-      <h3><strong>BIKE PARK NAME HERE</strong></h3>
-      <%= rows[0].park %>
-
-        <h3><strong>List of Strava Segments </strong></h3>
+        <h3>Strava Segments for Bike Park</h3>
+ 
+        <div id="toolbar">
+        </div>
+        <h4>Park Name: <%= rows[0].name %></h4>
+        <h4>Total Segments Listed : <%= rows.length %></h4>
 
         <table id = "table1" class = "table table-bordered table-hover display compact">
             <thead class="thead-inverse">
             <tr>
               <th>Segment ID</th>
               <th>Segment Name</th>
-              <th>View on Strava</th>
+              <th>Segment URL</th>
             </tr>
           </thead>
           <tbody>
@@ -22,13 +24,23 @@
                 <% rows.forEach(function(row){ %>
                 <tr>
                     <td><%= row.segment %></td>
-                    <td><%= row.name %></td>
-                    <td><a href = "#">View on Strava</a></td>
+                    <td><%= row.segmentname %></td>
+                    <td><a href = "<%= row.stravaurl %>">View on Strava</a></td>
                 </tr>    
                 <% }) %>
 
           </tbody>
         </table>
+         <hr>
+        <p>Return to <a href="/showOnePark/<%= rows[0].park %>">Bike Park</a></p>
+
 </div> 
+
+    <script>
+    // Initialising DataTables
+        $(document).ready(function() {
+          $('#table1').DataTable();
+        } );    
+    </script>
 
 <% include ./partials/footer %>

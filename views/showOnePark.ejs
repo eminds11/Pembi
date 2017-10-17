@@ -4,15 +4,10 @@
     <div class = "row">
         <div class = "col-md-3">
             <h3><strong>Park Dashboard</strong></h3>
-            <p><%= rows[0].id %></p>
             <div class = "list-group">
-                <a href = "#" class = "list-group-item active">More Info</a>
-                <a href = "/profile" class = "list-group-item">Challenge Stats</a>
-                <a href = "#" class = "list-group-item">See All Park Visits</a>
-                <a href = "/showSegments/1" class = "list-group-item">Challenge Strava Segments</a>
-                <a href = "#" class = "list-group-item">Total Challenge Visits</a>
-                <a href = "#" class = "list-group-item">Visits Last 7 days</a>
-                <a href = "#" class = "list-group-item">User Ranking</a>
+                <a href = "/showVisitsbyPark/<%= rows[0].id %>" class = "list-group-item">See All Park Visits</a>
+                <a href = "/showSegments/<%= rows[0].id %>" class = "list-group-item">Strava Segments for Park</a>
+                <a href = "http://<%= rows[0].website %>" class = "list-group-item">Bike Park Website</a>
             </div>
         </div>
         <div class = "col-md-9">
@@ -21,17 +16,15 @@
                 <h4><a><strong> <%= rows.name %> </strong></a></h4>
                 <img class = "img-responsive" src = "<%= rows.image %>">
                 <div class = "caption-full">
-                    <h4 class = "pull-right">$9.00/night</h4>
                     <p><%= rows.description %></p>
-                    <p><em>Website: <a href = "<%= rows.website %>"><%= rows.website %></a></em></p>
+                    <p><em>Website: <a href = "http://<%= rows.website %>"><%= rows.website %></a></em></p>
                 </div>
             </div>
             <!-- DIV for the Comments section below the Campground Info -->
             <div class = "well">
-                <p style="color:red">For Beta Demo only. The button doesn't work but go ahead, click it anyway:-)</p>
-                <div class ="text-right">
-                    <a class = "btn btn-success" href = "#">Add New Comment</a>
-                </div>
+                
+              <!--COMMENTS SECTION GOES HERE-->
+             
              <% }) %>
             </div>
         </div>

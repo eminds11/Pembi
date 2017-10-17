@@ -12,7 +12,6 @@
         <table id = "table1" class = "table table-bordered table-hover">
             <thead class="table thead-inverse">
             <tr>
-              <th>Park</th>
               <th>User</th>
               <th>Date Visited</th>
             </tr>
@@ -22,7 +21,6 @@
                 <!--Build table content by iterating received object rows-->
                 <% rows.forEach(function(row){ %>
                 <tr>
-                    <td id ="parkid"><%= row.park %></td>
                     <td id = "parkname"><%= row.first_name %> <%= row.last_name %></td>
                     <td id = "parklocation"><%= row.date.toDateString() %></td>
                 </tr>    
@@ -30,6 +28,16 @@
 
           </tbody>
         </table>
+         <hr>
+        <p>Return to <a href="/showOnePark/<%= rows[0].park %>">Bike Park</a></p>
+
     </div>
+    
+    <script>
+    // Initialising DataTables
+        $(document).ready(function() {
+          $('#table1').DataTable();
+        } );    
+    </script>
     
 <% include ./partials/footer %>

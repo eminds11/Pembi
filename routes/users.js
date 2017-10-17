@@ -40,7 +40,7 @@ module.exports = function(app, passport) {
 
 	// process the login form
 	app.post('/login', passport.authenticate('local-login', {
-            successRedirect : '/profile', // redirect to the secure profile section
+            successRedirect : '/', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
 		}),
@@ -64,7 +64,7 @@ module.exports = function(app, passport) {
 
 	// process the signup form
 	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect : '/profile', // redirect to the secure profile section
+		successRedirect : '/', // redirect to the secure profile section
 		failureRedirect : '/signup', // redirect back to the signup page if there is an error
 		failureFlash : true // allow flash messages
 	}));
@@ -108,36 +108,37 @@ module.exports = function(app, passport) {
 		function(token, done) {
 		    var sql = "SELECT * FROM users WHERE email = ?";
 		    connection.query(sql, [req.body.email], function(err, user) {		// verify if user exists
-				if (err) { return done(err); }
-				if (!user.length) {
+				if (err) {
+					return done(err);
+				} else if (!user.length) {
 					console.log("user does not exist");
 					req.flash('error', 'No account with that email address exists.');
 	        		return res.redirect('/forgot');
-	        	}
+				}		// if none of he above triggered then continue with the below ...
 
-		// save token against user in DB
-		console.log(user); // object
-		console.log(user[0]);  // element in array
-		var User = user[0];
-		console.log(User.email);
-
-			var newToken = token;
-			var newExpiry = (Date.now() + 3600000); // 1 hour
-            var sql = "UPDATE users SET resetPasswordToken=?, resetPasswordExpires=? WHERE email = ?";
-            connection.query(sql, [ newToken, newExpiry, req.body.email ], function(err, rows) {
-                if(err){
-                    console.log(err);
-                }
-				console.log("token saved to DB : " + token);
-    			done(err, token, rows);
-		        }); // end of save
+			// save token against user in DB
+				var User = user[0];
+				var newToken = token;
+				var newExpiry = (Date.now() + 3600000); // 1 hour
+	            var sql = "UPDATE users SET resetPasswordToken=?, resetPasswordExpires=? WHERE email = ?";
+	            connection.query(sql, [ newToken, newExpiry, req.body.email ], function(err, rows) {
+	                if(err){
+	                    console.log(err);
+	                    done(err);
+	                } else {
+						console.log("token saved to DB : " + token);
+						console.log(User);
+		    			done(null, token, User);
+					}
+					}); // end of save
+					
 			}); // end of connection.query
 	    }, // end of function to check if user exists & get email
 	    
 	    // generate and send the email
 		// =============================
-		function(token, user, done) {
-	    	console.log("reached send reset mail function");
+		function(token, User, done) {
+	    	console.log("reached send reset mail function for : " + User.email);
 	    	
 		      var smtpTransport = nodemailer.createTransport({
 		        service: 'Gmail', 
@@ -147,17 +148,17 @@ module.exports = function(app, passport) {
 		        }
 		      });
 		      var mailOptions = {
-		        to: user.email,
+		        to: User.email,
 		        from: 'pembiorg@gmail.com',
-		        subject: 'Node.js Password Reset',
+		        subject: 'Pembi.org Password Reset',
 		        text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
 		          'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
 		          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
 		          'If you did not request this, please ignore this email and your password will remain unchanged.\n'
 		      };
 		      smtpTransport.sendMail(mailOptions, function(err) {
-		        req.flash('success', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
-		        console.log('mail sent');
+		        req.flash('success', 'An e-mail has been sent to ' + User.email + ' with further instructions.');
+		        console.log(mailOptions.text);
 		        done(err, 'done');
 		      });
 			}	// end of send mail function
@@ -281,7 +282,8 @@ module.exports = function(app, passport) {
 	    //     req.flash('success', 'Success! Your password has been changed.');
 	    //     done(err);
 	      //});
-	       res.redirect('/profile');
+			req.flash('success', 'Success! Your password has been changed.');
+	    	res.redirect("/showVisitsbyUser");
 	    } // end of send mail function
 	    
 	  ], function(err) {

@@ -19,7 +19,7 @@ connection.query('USE ' + dbconfig.database);
 // Initial page redirecting to Strava
 router.get('/stravaauth', isLoggedIn, function (req, res) {
 	console.log("sending Strava Auth ..");
-	res.redirect("https://www.strava.com/oauth/authorize?client_id=20249&response_type=code&redirect_uri=https://pembi-system-trackz.c9users.io/getauthcode&approval_prompt=force");
+	res.redirect("https://www.strava.com/oauth/authorize?client_id=20249&response_type=code&redirect_uri=http://pembi.org/getauthcode&approval_prompt=force");
 });
 
 

@@ -41,8 +41,8 @@ v4: Comments, Facebook login
 - [x]add e-mail verification during register process
 - [x]add hash to password encryption
 - [x]Challenge ranking/leaderboard
-- []add side menu for ShowParks page ... How does Challenge Work, Get Started, Challenge Ranking
-- []make showOne 6/6 & add challenge ranking, total visits, most visits, etc
+- [x]add side menu for ShowParks page ... How does Challenge Work, Get Started, Challenge Ranking
+- [x]make showOne 6/6 & add challenge ranking, total visits, most visits, etc
 - [x]Implement flash messages (flash-connect)
 - [x]make auth views files work
 - [x]create users.js routes file & make work with basics
@@ -53,21 +53,21 @@ STRAVA
 - [x]add auth
 - [x]myDashboard
 - [x]bike park challenge dashboard
-- []bike park dashboard
-- []clean up parks names
+- [x]bike park dashboard
+- [x]clean up parks names
 - THU:
 - [x]add more segments for Modderfontein
 - [x]fix strava upload for Rob demo ... show park appear once segment found
-- []display parks strava challenge segments
-- []display grouped park visits by park
-- []fix columns under bike park leaderboard - remove id
+- [x]display parks strava challenge segments
+- [x]display grouped park visits by park
+- [x]fix columns under bike park leaderboard - remove id
 - [x]add new === verify password (see forgot/reset example)
 - [x]check if getactivity works without the timer???
-- []try a few more gpx uploads OR go ride your bicycle more!
-- []onclick on bikeparks page
+- [x]try a few more gpx uploads OR go ride your bicycle more!
+- [x]onclick on bikeparks page
 - []fix page names for header & to show loggedin user
-- []get digitalocean hosting working ... pembi.org - with very basic demo site
-
+- [x]get digitalocean hosting working ... pembi.org - with very basic demo site
+- []fix dates
 
 RELEASE 2
 - []add extract unique params from visits array & insert into visitslog
@@ -76,5 +76,13 @@ RELEASE 2
 - []read featured bike parks from db marker - step 2
 - []refactor for routing folder
 - []add comments capability
+- []onshowParks ... add LISTVIEW/MAPVIEW
 
+mySQL queries
+IMPORT DATABASE
+mysql -u username -p database_name < file.sql
+mysql> use DATABASE_NAME
+mysql> SOURCE /home/ubuntu/workspace//Pembi/v4/pembidb1610.sql
 
+EXPORT DATABASE
+mysqldump -u root -p pembidb > /home/ubuntu/workspace//Pembi/v4/pembidb1710.sqlmysqldump -u [username] -p [database-you-want-to-dump] > [path-to-place-data-dump]

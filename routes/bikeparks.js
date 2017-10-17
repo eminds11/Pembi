@@ -40,17 +40,20 @@ router.get('/Q&A', function (req, res) {
 //GET Strava segments by park by ID
 router.get('/showSegments/:id', function (req, res) {
 	// id is the number of the record that needs to be retreived
-	var id = req.params.id;
-	
-		connection.query('SELECT * FROM parksegments WHERE park = ?', [id], function(err, rows, fields) {
+	var parkid = req.params.id;
+
+    var sql = "SELECT parksegments.park, parksegments.segment, parksegments.segmentname, parksegments.stravaurl, parks.name FROM parksegments LEFT JOIN parks ON parksegments.park=parks.id WHERE park = ?";
+
+		connection.query(sql, [parkid], function(err, rows, fields) {
   		if (!err){
   			var response = [];
- 
 			if (rows.length != 0) {
 				response.push({'result' : 'success', 'data' : rows});
 				res.render("showSegments", {rows: rows}); //1st rows is the variable being passed to ejs, second rows is the array in this file
 			} else {
 				response.push({'result' : 'error', 'msg' : 'No Results Found'});
+				req.flash("error", "No segments found for this bike park! Contact Admin to load segments.");
+				res.redirect("/showOnePark/"+parkid);
 			}
 
 			// res.setHeader('Content-Type', 'application/json');

@@ -25,8 +25,8 @@ require('./config/passport')(passport); // pass passport for configuration
 // DATABASE CONNECTION
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'root',
-  password : '',
+  user     : 'carl',
+  password : 'P@ssw0rd11',
   database : 'pembidb'
 });
 try {
@@ -79,6 +79,10 @@ app.use(require('./routes/leaderboards.js'));
 // ----------
 app.get('/testblock', function (req, res) {
 	res.render("testblock");
+});
+
+app.get('/contactus', function (req, res) {
+	res.render("contactus");
 });
 
 
@@ -158,6 +162,7 @@ app.get('/showOnePark/:id', function (req, res) {
 app.get("/showVisitsbyUser", isLoggedIn, function (req, res) {
 
 	var userid = req.user.id;
+	console.log(req.user.id);
     var sql = "SELECT visitslog.user, visitslog.date, parks.name, users.first_name, users.last_name FROM visitslog LEFT JOIN parks ON visitslog.park=parks.id LEFT JOIN users ON visitslog.user=users.id WHERE user = ?";
 
 		connection.query(sql, [userid], function(err, rows, fields) {
@@ -166,10 +171,12 @@ app.get("/showVisitsbyUser", isLoggedIn, function (req, res) {
  
 			if (rows.length != 0) {
 				response.push({'result' : 'success', 'data' : rows});
-console.log(rows[0]);
+				console.log(rows);
 				res.render("showVisitsbyUser", { rows: rows, currentUser: req.user }); //1st rows is the variable being passed to ejs, second rows is the array in this file
 			} else {
 				response.push({'result' : 'error', 'msg' : 'No Results Found'});
+				req.flash("error", "No activities found!");
+				res.redirect("/");
 			}
   		} else {
 		    res.status(400).send(err);
@@ -180,7 +187,6 @@ console.log(rows[0]);
 // SHOW USER VISITS BY ID
 app.get('/showVisitsbyPark/:id', function (req, res) {
 	var parkid = req.params.id;
-    console.log("ParkID : " + parkid);
     var sql = "SELECT visitslog.park, visitslog.date, users.first_name, users.last_name, parks.name FROM visitslog LEFT JOIN users ON visitslog.user=users.id LEFT JOIN parks ON visitslog.park=parks.id WHERE park = ?";
 
 		connection.query(sql, [parkid], function(err, rows, fields) {
@@ -192,7 +198,10 @@ app.get('/showVisitsbyPark/:id', function (req, res) {
 				console.log(rows);
 				res.render("showVisitsbyPark", {rows: rows}); //1st rows is the variable being passed to ejs, second rows is the array in this file
 			} else {
+				console.log("no vsits found");
 				response.push({'result' : 'error', 'msg' : 'No Results Found'});
+				req.flash("error", "No activities found for this bike park!");
+				res.redirect("/showOnePark/"+parkid);
 			}
   		} else {
 		    res.status(400).send(err);
@@ -223,11 +232,12 @@ function isLoggedIn(req, res, next) {
 // ===========
 // CREATE SERVER
 // Cloud 9 io
-app.listen(process.env.PORT, process.env.IP, function(){
-	console.log("Pembi Server has started!"); 
-  });
+// app.listen(process.env.PORT, process.env.IP, function(){
+// 	console.log("Pembi Server has started!"); 
+//   });
 
-// localhost:3000
-// app.listen(3000, function () {
-// 	console.log('Example app listening on port 3000!')
-//   })
+// localhost:80
+app.set('port', (process.env.PORT || 80))
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
