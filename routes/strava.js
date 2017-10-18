@@ -235,7 +235,7 @@ router.get('/createsubscription', function (req, res) {
 });
 
 // Step 2. Receive Strava validation request, send JSON response
-router.get('/webhookTEMP', function (req, res) {
+router.get('/webhook', function (req, res) {
 
 	console.log("Step 3 : PEMBI SERVER : Strava validation request received, sending back token");
 	var hubchallenge = req.query["hub.challenge"];
