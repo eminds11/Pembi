@@ -348,7 +348,7 @@ function getActivity1(inputFile, callback){
 //!!!!!!!!!!!sonewhere here extract the unique elemnets from the array - in case multiple parks visited
 
 			done(null, parksVisited, userid);		// if no done() then async gets STUCK here!!!
-			}, 0000)
+			}, 3000)
 
 
 
