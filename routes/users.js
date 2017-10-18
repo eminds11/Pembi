@@ -162,7 +162,7 @@ module.exports = function(app, passport) {
 			      	return done(err);
 		      	} else {
 			        req.flash('success', 'An e-mail has been sent to ' + User.email + ' with further instructions.');
-			        done();
+			        done(err, 'done');
 		      	}
 		      });
 			}	// end of send mail function
