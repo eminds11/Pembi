@@ -9,13 +9,10 @@
         <h2><strong>SUCCESS!</strong></h2>
         <br>
         <p>Your Strava account is now linked.</p>
-        <a href = "/showVisitsbyUser">My Dashboard</a>
-        <a href = "#">Challenge Leaderboard</a>
-        
+
         <hr>
         <h4><strong>Your Strava Profile Information</strong></h4>
         <img src = <%= response.athlete.profile_medium %> style="width:100px;height:100px;">
-        <p>access token :  <%= response.access_token %></p>
         <p>athlete id : <%= response.athlete.id %></p>
         <p><strong><%= response.athlete.firstname %> <%= response.athlete.lastname %></strong></p>
         <p><%= response.athlete.city %>, <%= response.athlete.state %></p>
