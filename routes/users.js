@@ -156,10 +156,15 @@ module.exports = function(app, passport) {
 		          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
 		          'If you did not request this, please ignore this email and your password will remain unchanged.\n'
 		      };
-		      smtpTransport.sendMail(mailOptions, function(err) {
-		        req.flash('success', 'An e-mail has been sent to ' + User.email + ' with further instructions.');
-		        console.log(mailOptions.text);
-		        done(err, 'done');
+		      smtpTransport.sendMail(mailOptions, function(err, info) {
+		      	if(err){
+			      	console.log(err);
+		      	} else {
+			        req.flash('success', 'An e-mail has been sent to ' + User.email + ' with further instructions.');
+			        console.log(mailOptions.text);
+			        console.log(info);
+			        done(err, 'done');
+		      	}
 		      });
 			}	// end of send mail function
 			], function(err) {
