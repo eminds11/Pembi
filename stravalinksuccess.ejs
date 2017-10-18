@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+
+
+<div class = "ui main text container segment">
+
+    <h2><strong>PEMBI BIKE PARK CHALLENGE</strong></h2>
+    
+    <div class = "thumbnail" style="text-align:center">
+        <h2><strong>SUCCESS!</strong></h2>
+        <br>
+        <p>Your Strava account is now linked.</p>
+
+        <hr>
+        <h4><strong>Your Strava Profile Information</strong></h4>
+        <img src = <%= response.athlete.profile_medium %> style="width:100px;height:100px;">
+        <p>athlete id : <%= response.athlete.id %></p>
+        <p><strong><%= response.athlete.firstname %> <%= response.athlete.lastname %></strong></p>
+        <p><%= response.athlete.city %>, <%= response.athlete.state %></p>
+        <p>Email : <%= response.athlete.email %></p>
+        
+        <br><br>
+        <img src = "/assets/api_logo_pwrdBy_strava_horiz_light.png" style= "width: 175px">
+        
+    </div>
+</div>
+
+<% include ./partials/footer %>
