@@ -157,13 +157,8 @@ module.exports = function(app, passport) {
 		          'If you did not request this, please ignore this email and your password will remain unchanged.\n'
 		      };
 		      smtpTransport.sendMail(mailOptions, function(err) {
-		      	if(err){
-			        req.flash('error', 'Unable to send Reset Password e-mail to ' + User.email + '. Please contact Pembi Admin.');
-			      	return done(err);
-		      	} else {
 			        req.flash('success', 'An e-mail has been sent to ' + User.email + ' with further instructions.');
 			        done(err, 'done');
-		      	}
 		      });
 			}	// end of send mail function
 			], function(err) {
