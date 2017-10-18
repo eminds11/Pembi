@@ -159,11 +159,13 @@ module.exports = function(app, passport) {
 		      smtpTransport.sendMail(mailOptions, function(err, info) {
 		      	if(err){
 			      	console.log(err);
+			        req.flash('error', 'Unable to send reset e-mail to ' + User.email + '. Please contact Pembi Webadmin.');
+			      	done(err);
 		      	} else {
 			        req.flash('success', 'An e-mail has been sent to ' + User.email + ' with further instructions.');
 			        console.log(mailOptions.text);
 			        console.log(info);
-			        done(err, 'done');
+			        done(null, 'done');
 		      	}
 		      });
 			}	// end of send mail function
