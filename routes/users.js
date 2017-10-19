@@ -159,8 +159,8 @@ module.exports = function(app, passport) {
 		      smtpTransport.sendMail(mailOptions, function(err) {
 		      	if(err){
 					console.log(err);
-			        req.flash('success', 'Unable to send Reset e-mail to ' + User.email + '. Please contact Pembi Admin.');
-			        return done(err);
+			        req.flash('error', 'Unable to send Reset e-mail to ' + User.email + '. Please contact Pembi Admin.');
+			        done(err);
 		      	} else {
 			      	console.log("mail sent");
 			        req.flash('success', 'An e-mail has been sent to ' + User.email + ' with further instructions.');
@@ -168,8 +168,13 @@ module.exports = function(app, passport) {
 		      	}
 		      });
 			}	// end of send mail function
-			], function(err) {
-		    if (err) res.redirect('/forgot');
+			], function(err, result) {
+		    if (err){
+			    res.redirect('/forgot');	
+		    } else {
+		    	console.log(result);
+			    res.redirect('/forgot');	
+		    } 
 		 }); // end of async
 	}); // end of app.post
 
