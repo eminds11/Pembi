@@ -164,7 +164,7 @@ module.exports = function(app, passport) {
 		      	} else {
 			      	console.log("mail sent");
 			        req.flash('success', 'An e-mail has been sent to ' + User.email + ' with further instructions.');
-			        done(null);
+			        done(null, "done");
 		      	}
 		      });
 			}	// end of send mail function
