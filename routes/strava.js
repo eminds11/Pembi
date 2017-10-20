@@ -110,7 +110,7 @@ router.get('/createsubscription', function (req, res) {
 	};
 
    var options = {
-     url: "https://api.strava.com/api/v3/push_subscriptions?client_id=20249&client_secret=405fa022a069863c438a49429d8d2c37c3be10b4&object_type=activity&aspect_type=create&callback_url=https://pembi-system-trackz.c9users.io/webhook&verify_token=STRAVA",
+     url: "https://api.strava.com/api/v3/push_subscriptions?client_id=20249&client_secret=405fa022a069863c438a49429d8d2c37c3be10b4&object_type=activity&aspect_type=create&callback_url=http://pembi.org/webhook&verify_token=STRAVA",
      method: 'POST',
    };
 
