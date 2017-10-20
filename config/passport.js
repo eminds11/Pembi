@@ -58,20 +58,23 @@ module.exports = function(passport) {
                 } else {
                     // if there is no user with that email
                     // create the user
+
                     var newUserMysql = {
                         firstname: req.body.firstname,
                         lastname: req.body.lastname,
                         email: req.body.email,
-                        date: Date.now(),
+                        date: new Date(Date.now()).toISOString().slice(0, 19).replace('T', ' '),
                         password: bcrypt.hashSync(password, null, null)  // use the generateHash function in our user model
                     };
+                    console.log(newUserMysql.date);
                     var insertQuery = "INSERT INTO users ( first_name, last_name, email, password, datecreated ) values (?,?,?,?,?)";
                     connection.query(insertQuery,[newUserMysql.firstname, newUserMysql.lastname, newUserMysql.email, newUserMysql.password, newUserMysql.date ], function(err, rows) {
                         if(err){
                             console.log(err);
+                        } else {
+                            newUserMysql.id = rows.insertId;
+                            return done(null, newUserMysql, req.flash('success', 'Success! Welcome to the Pembi website!'));
                         }
-                        newUserMysql.id = rows.insertId;
-                        return done(null, newUserMysql, req.flash('success', 'Success! Welcome to the Pembi website!'));
                     });
                 }
             });
