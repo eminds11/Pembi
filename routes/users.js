@@ -24,6 +24,9 @@ module.exports = function(app, passport) {
 		res.render('index.ejs'); // load the index.ejs file
 	});
 
+	app.get('/betatesting', function(req, res) {
+		res.render('betatesting'); // load the index.ejs file
+	});
 
 	// =====================================
 	// AUTH ROUTES
@@ -127,7 +130,6 @@ module.exports = function(app, passport) {
 	                    done(err);
 	                } else {
 						console.log("token saved to DB : " + token);
-						console.log(User);
 		    			done(null, token, User);
 					}
 					}); // end of save
