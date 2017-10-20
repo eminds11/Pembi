@@ -7,7 +7,7 @@
             <div class = "list-group">
                 <a href = "/showVisitsbyPark/<%= rows[0].id %>" class = "list-group-item">See All Park Visits</a>
                 <a href = "/showSegments/<%= rows[0].id %>" class = "list-group-item">Strava Segments for Park</a>
-                <a href = "http://<%= rows[0].website %>" class = "list-group-item">Bike Park Website</a>
+                <a href = "<%= rows[0].website %>" target="_blank" class = "list-group-item">Bike Park Website</a>
             </div>
         </div>
         <div class = "col-md-9">
@@ -17,7 +17,7 @@
                 <img class = "img-responsive" src = "<%= rows.image %>">
                 <div class = "caption-full">
                     <p><%= rows.description %></p>
-                    <p><em>Website: <a href = "http://<%= rows.website %>"><%= rows.website %></a></em></p>
+                    <p><em>Website: <a href = "<%= rows.website %>" target="_blank"><%= rows.website %></a></em></p>
                 </div>
             </div>
             <!-- DIV for the Comments section below the Campground Info -->
