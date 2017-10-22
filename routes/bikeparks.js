@@ -36,7 +36,7 @@ router.get('/Q&A', function (req, res) {
 	res.render("Q&A");
 });
 
-router.get('/showparkmap/:id', function (req, res) {
+router.get('/showParkMap/:id', function (req, res) {
 	var parkid = req.params.id;
 	
     var sql = "SELECT * FROM parks WHERE id = ?";
