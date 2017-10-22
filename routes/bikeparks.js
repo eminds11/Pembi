@@ -36,6 +36,21 @@ router.get('/Q&A', function (req, res) {
 	res.render("Q&A");
 });
 
+router.get('/showparkmap/:id', function (req, res) {
+	var parkid = req.params.id;
+	
+    var sql = "SELECT * FROM parks WHERE id = ?";
+	connection.query(sql, [parkid], function(err, rows) {
+		if(err){
+			console.log(err);
+		} else {
+			console.log(rows[0].name);
+			var gmapdata = {id: parkid, name: rows[0].name, lat: rows[0].latitude, lng: rows[0].longitude, info: rows[0].info};
+			res.render("showParkMap", { gmapdata: gmapdata } );
+		}
+	});
+});
+
 
 //GET Strava segments by park by ID
 router.get('/showSegments/:id', function (req, res) {

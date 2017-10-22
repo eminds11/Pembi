@@ -5,6 +5,7 @@
         <div class = "col-md-3">
             <h3><strong>Park Dashboard</strong></h3>
             <div class = "list-group">
+                <a href = "/showParkMap/<%= rows[0].id %>" class = "list-group-item">See Park on a Map</a>
                 <a href = "/showVisitsbyPark/<%= rows[0].id %>" class = "list-group-item">See All Park Visits</a>
                 <a href = "/showSegments/<%= rows[0].id %>" class = "list-group-item">Strava Segments for Park</a>
                 <a href = "<%= rows[0].website %>" target="_blank" class = "list-group-item">Bike Park Website</a>
@@ -16,7 +17,7 @@
                 <h4><a><strong> <%= rows.name %> </strong></a></h4>
                 <img class = "img-responsive" src = "<%= rows.image %>">
                 <div class = "caption-full">
-                    <p><%= rows.description %></p>
+                    <p><%= rows.info %></p>
                     <p><em>Website: <a href = "<%= rows.website %>" target="_blank"><%= rows.website %></a></em></p>
                 </div>
             </div>
