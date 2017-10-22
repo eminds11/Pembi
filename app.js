@@ -14,7 +14,8 @@ var LocalStrategy   = require('passport-local').Strategy;
 var flash   	= require('connect-flash');
 var async		= require("async");
 var crypto		= require("crypto");
-
+var fs			= require("fs");
+var https    	= require('https');
 
  // REQUIRE THE ROUTE FILES - now in /routes folder
 // var userRoutes = require("./routes/users");
@@ -41,6 +42,7 @@ app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(require('helmet')());
 
 // SETUP VIEW ENGINE
 app.set('view engine', 'ejs'); // set up ejs for templating
@@ -241,3 +243,13 @@ app.set('port', (process.env.PORT || 80))
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
+
+// SSL : Set up express server here
+//---------------------------------
+const options = {
+    cert: fs.readFileSync('./sslcert/fullchain.pem'),
+    key: fs.readFileSync('./sslcert/privkey.pem')
+};
+// app.listen(8080);
+https.createServer(options, app).listen(443);
+
