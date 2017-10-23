@@ -1,0 +1,73 @@
+<% include ./partials/header %>
+
+
+<div class = "ui main text container segment">
+    <h3><strong>Where to find the Pembi Challenge Bike Parks</strong></h3>
+
+    <div class = "thumbnail">
+
+      <div id="map"></div>
+
+    </div>
+        <hr>
+        <p>Return to <a href="/showParks">Bike Parks</a></p>
+</div>
+
+
+<script>
+      function initMap() {
+        var bounds = new google.maps.LatLngBounds();
+        
+        var myLatLng = {lat: -25.8, lng: 28.2};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: myLatLng
+        });
+
+
+    // Display multiple markers on a map
+    var infoWindow = new google.maps.InfoWindow();
+    var marker, i;
+    
+    $.get( "/allParkMapData", function( data ) {
+     rows = data.rows;
+     console.log(rows);
+      // Loop through our array of markers & place each one on the map
+        for( i = 0; i < rows.length; i++ ) {
+            var position = new google.maps.LatLng( rows[i].latitude,  rows[i].longitude);
+            bounds.extend(position); 
+            marker = new google.maps.Marker({
+              position: position,
+              map: map,
+              title: rows[i].latitude
+            });
+            
+            // Allow each marker to have an info window
+                // ADD Infowindow
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infoWindow.setContent(rows[i].info);
+                    infoWindow.open(map, marker);
+                }
+            })(marker, i));
+    
+        // Automatically center the map fitting all markers on the screen
+        map.fitBounds(bounds);
+    
+        }
+    });
+    
+        // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+        this.setZoom(14);
+        google.maps.event.removeListener(boundsListener);
+    });
+        
+  }
+      
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeItwISa6X-I6t8DDnuAbhUSEo_FRHdkg&callback=initMap">
+</script>
+
+<% include ./partials/footer %>

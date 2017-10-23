@@ -3,38 +3,15 @@
 <div class="ui main text container segment">
 
       <!-- Feautured Bike Parks Section -->
-      <h3><strong>Featured Bike Parks</strong></h3>
-
+      <h3><strong>Where to find the Pembi Bike Park Challenge Parks</strong></h3>
          
-      <!-- Grid display same as YelpCamp Campgrounds Page-->
-      <div class = "row text-center" style = "display: flex; flex-wrap: wrap;">
-        <div class = "col-md-4 col-sm-6">
-            <div class = "thumbnail">
-                <img src = "https://www.imba.com/sites/default/files/WinterPark_828_rgb.jpg" style = "height: 225px">
-                <div class = "caption">
-                  <h4>Modderfontein</h4>
-                </div>
-            </div>
+        <!-- Show all parks on Google Maps-->
+        <!---------------------------------->
+        <div class = "thumbnail">
+            <div id="map"></div>
         </div>
-                <div class = "col-md-4 col-sm-6">
-            <div class = "thumbnail">
-                <img src = "http://www.ride.co.za/wp-content/uploads/2015/05/thaba1.jpg" style = "height: 225px">
-                <div class = "caption">
-                  <h4>Thaba Trails</h4>
-                </div>
-            </div>
-        </div>
-                <div class = "col-md-4 col-sm-6">
-            <div class = "thumbnail">
-                <img src = "http://www.avianto.co.za/wp-content/uploads/2017/01/EV_20130824_00165_1.jpg" style = "height: 225px">
-                <div class = "caption">
-                  <h4>Avianto Trails</h4>
-                </div>
-            </div>
-        </div>
-      </div>
-      <!-- End of grid display-->
-      
+        <!-- End of Google maps display-->
+
 
         <h3><strong>List of Bike Parks</strong></h3>
 
@@ -64,6 +41,67 @@
           </tbody>
         </table>
 </div> 
+
+
+<!--SCRIPT START : Show Parks on Map-->
+
+<script>
+      function initMap() {
+        var bounds = new google.maps.LatLngBounds();
+        
+        var myLatLng = {lat: -25.8, lng: 28.2};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: myLatLng
+        });
+
+
+    // Display multiple markers on a map
+    var infoWindow = new google.maps.InfoWindow();
+    var marker, i;
+    
+    $.get( "/allParkMapData", function( data ) {
+     rows = data.rows;
+     console.log(rows);
+      // Loop through our array of markers & place each one on the map
+        for( i = 0; i < rows.length; i++ ) {
+            var position = new google.maps.LatLng( rows[i].latitude,  rows[i].longitude);
+            bounds.extend(position); 
+            marker = new google.maps.Marker({
+              position: position,
+              map: map,
+              title: rows[i].name
+            });
+            
+            // Allow each marker to have an info window    
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infoWindow.setContent(rows[i].info);
+                    infoWindow.open(map, marker);
+                }
+            })(marker, i));
+    
+        // Automatically center the map fitting all markers on the screen
+        map.fitBounds(bounds);
+        }
+    });
+
+        // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+        this.setZoom(14);
+        google.maps.event.removeListener(boundsListener);
+    });
+        
+  }
+      
+</script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeItwISa6X-I6t8DDnuAbhUSEo_FRHdkg&callback=initMap">
+</script>
+
+<!--END : Show Parks on Map-->
+
 
 <!--Button TEST onclick-->
     <script>

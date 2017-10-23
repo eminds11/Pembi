@@ -36,6 +36,10 @@ router.get('/Q&A', function (req, res) {
 	res.render("Q&A");
 });
 
+// GOOGLE MAPS
+// ============
+// Show one park on map
+//---------------------
 router.get('/showParkMap/:id', function (req, res) {
 	var parkid = req.params.id;
 	
@@ -51,6 +55,25 @@ router.get('/showParkMap/:id', function (req, res) {
 	});
 });
 
+// Show all parks on map
+//-----------------------
+router.get('/showParkMapAll', function (req, res) {
+
+	res.render("showParkMapAll");
+});
+
+router.get('/allParkMapData', function (req, res) {
+
+    var sql = "SELECT * FROM parks";
+	connection.query(sql, function(err, rows) {
+		if(err){
+			console.log(err);
+		} else {
+			console.log(rows[0].name);
+			res.json({rows: rows});
+		}
+	});
+});
 
 //GET Strava segments by park by ID
 router.get('/showSegments/:id', function (req, res) {
