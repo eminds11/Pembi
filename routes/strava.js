@@ -84,10 +84,13 @@ router.post('/webhook', function (req, res) {
 	console.log("user : " + req.body.owner_id);
 	console.log("activity : " + req.body.object_id);
 
-	getActivity1(req.body, function(req, res){
-		
-	console.log("back after getactivity !!!");
+	logWebhook(req.body, function(req, res){
+		console.log("Back from logWebhook");
 	});
+
+	// getActivity1(req.body, function(req, res){
+	// 	console.log("Back from getactivity !!!");
+	// });
 
 });
 
@@ -110,7 +113,7 @@ router.get('/createsubscription', function (req, res) {
 	};
 
    var options = {
-     url: "https://api.strava.com/api/v3/push_subscriptions?client_id=20249&client_secret=405fa022a069863c438a49429d8d2c37c3be10b4&object_type=activity&aspect_type=create&callback_url=http://pembi.org/webhook&verify_token=STRAVA",
+     url: "https://api.strava.com/api/v3/push_subscriptions?client_id=20249&client_secret=405fa022a069863c438a49429d8d2c37c3be10b4&object_type=activity&aspect_type=create&callback_url=https://pembi-system-trackz.c9users.io/webhook&verify_token=STRAVA",
      method: 'POST',
    };
 
@@ -140,12 +143,37 @@ router.get('/webhook', function (req, res) {
 // FUNCTIONS
 //=========================
 
+// Log webhook to database
+//------------------------
+function logWebhook(inputFile, callback){
+	console.log("Reached logWebhook");
+
+	let activityDate = new Date(inputFile.event_time * 1000);
+	var values = { user: inputFile.owner_id, activity: inputFile.object_id, date: activityDate };
+    var sql = "INSERT INTO logwebhooks SET ?";
+	connection.query(sql, values, function(err, rows) {
+  		if (err){
+  			console.log(err);
+  			callback(err);
+  		} else {
+				console.log(rows);
+				callback();
+		}
+	});	// end of connection.query		
+}
+
+
+// Get segments and save to database
+//----------------------------------
 function getActivity1(inputFile, callback){
 	
 	async.waterfall([
 
 	// STEP 0 : Get user access token from DB
 	function Zero(done){
+
+	console.log("Reached logWebhook");
+
 	 	var sql = "SELECT * FROM users WHERE stravaid = ?";
 		connection.query(sql, [ inputFile.owner_id ], function(err, rows) {
 	  		if (err){
