@@ -88,9 +88,9 @@ router.post('/webhook', function (req, res) {
 		console.log("Back from logWebhook");
 	});
 
-	// getActivity1(req.body, function(req, res){
-	// 	console.log("Back from getactivity !!!");
-	// });
+	getActivity1(req.body, function(req, res){
+		console.log("Back from getactivity !!!");
+	});
 
 });
 
