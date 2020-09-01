@@ -8,7 +8,7 @@ DATABASE CONFIG
 - [x]change in app.js + config
     'host': 'localhost',
     'user': 'carl',
-    'password': 'P@ssw0rd11'
+    'password': '***'
 
 Strava API callback uri & url
 - [x]change callback url on https://www.strava.com/settings/api
